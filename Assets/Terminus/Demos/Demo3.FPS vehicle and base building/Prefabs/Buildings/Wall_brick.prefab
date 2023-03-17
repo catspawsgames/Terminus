@@ -1,0 +1,777 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1914216296881240}
+  m_IsPrefabParent: 1
+--- !u!1 &1069426487462474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4566800240658608}
+  - component: {fileID: 33071809093488470}
+  - component: {fileID: 23362608940452868}
+  m_Layer: 0
+  m_Name: wall_brick_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1914216296881240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4048224576416466}
+  - component: {fileID: 65984931213936244}
+  - component: {fileID: 114329487625676088}
+  - component: {fileID: 114337820605643654}
+  - component: {fileID: 114187775235825248}
+  - component: {fileID: 114147221597733026}
+  - component: {fileID: 114963591929540496}
+  - component: {fileID: 54525405091377736}
+  - component: {fileID: 114197434871592274}
+  - component: {fileID: 114041925927445380}
+  - component: {fileID: 114340940843293234}
+  m_Layer: 0
+  m_Name: Wall_brick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4048224576416466
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.109, y: 0, z: -0.195}
+  m_LocalScale: {x: 2, y: 0.1, z: 2}
+  m_Children:
+  - {fileID: 4566800240658608}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4566800240658608
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069426487462474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: -0.5}
+  m_LocalScale: {x: 0.3907, y: 2.9, z: 0.3907}
+  m_Children: []
+  m_Father: {fileID: 4048224576416466}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23362608940452868
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069426487462474}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: ea2ce066ddd3fc740aff706adda8656b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33071809093488470
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069426487462474}
+  m_Mesh: {fileID: 4300000, guid: 613d718121f070f43a05833a1edcc86c, type: 3}
+--- !u!54 &54525405091377736
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65984931213936244
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.99, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114041925927445380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecc6ada7d019224ab5f25625634720e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHP: 100
+  terminusObj: {fileID: 114329487625676088}
+  redirectObject: {fileID: 0}
+  remainsPrefab: {fileID: 1765045232768126, guid: 2a4ce0253e05d0244b2b239ca7da9b26,
+    type: 2}
+--- !u!114 &114147221597733026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518a449345e42524f9191ea9e99685fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawGizmos: 1
+  useOwnerRigidbody: 1
+  rigidbodyInfo:
+    mass: 0
+    drag: 0
+    angularDrag: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    useGravity: 0
+    interpolation: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  rigidbodyInfo2D:
+    mass: 0
+    linearDrag: 0
+    angularDrag: 0
+    gravityScale: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    interpolation: 0
+    sleepingMode: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  connectorName: Right
+  ownerP: {fileID: 114329487625676088}
+  layerP: 7
+  overrideLayerOptionsP: 0
+  overridenOptionsP:
+    name: 
+    inspectorColor: {r: 1, g: 0, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: -1
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 0
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 180
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 0
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 1
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  activeP: 1
+  stopReinitialization: 0
+  destroyFlag: 0
+  doNotMoveOwner: 0
+  drawControls: 0
+  isCurrentAttachmentPortP: 1
+  offsetP: {x: 0.5, y: 0, z: 0}
+  rotationP: {x: 0.49999997, y: 0.49999997, z: 0.49999997, w: 0.49999997}
+  rotationShiftP: 0
+  attachmentInfoP:
+    attachmentType: 0
+    selfConnector: {fileID: 0}
+    otherConnector: {fileID: 0}
+    joint: {fileID: 0}
+    hierarchyAttachment: 0
+    weldingAttachment: 0
+    selfIsInitiator: 0
+    autoReparented: 0
+    originalPositionDifference: {x: 0, y: 0, z: 0}
+    originalRotationDifference: {x: 0, y: 0, z: 0, w: 0}
+  connectorsToCheck: []
+  attachmentCandidateP: {fileID: 0}
+  attachmentCandidateDistanceP: 3.4028235e+38
+  attachmentCandidateAngleDiffP: 0
+  attachmentCandidatePositionP: {x: 0, y: 0, z: 0}
+  attachmentCandidateRotationP: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114187775235825248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518a449345e42524f9191ea9e99685fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawGizmos: 1
+  useOwnerRigidbody: 1
+  rigidbodyInfo:
+    mass: 0
+    drag: 0
+    angularDrag: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    useGravity: 0
+    interpolation: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  rigidbodyInfo2D:
+    mass: 0
+    linearDrag: 0
+    angularDrag: 0
+    gravityScale: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    interpolation: 0
+    sleepingMode: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  connectorName: Left
+  ownerP: {fileID: 114329487625676088}
+  layerP: 7
+  overrideLayerOptionsP: 0
+  overridenOptionsP:
+    name: 
+    inspectorColor: {r: 1, g: 0, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: -1
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 0
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 180
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 0
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 1
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  activeP: 1
+  stopReinitialization: 0
+  destroyFlag: 0
+  doNotMoveOwner: 0
+  drawControls: 0
+  isCurrentAttachmentPortP: 1
+  offsetP: {x: -0.5, y: 0, z: 0}
+  rotationP: {x: 0.49999997, y: -0.49999997, z: -0.49999997, w: 0.49999997}
+  rotationShiftP: 0
+  attachmentInfoP:
+    attachmentType: 0
+    selfConnector: {fileID: 0}
+    otherConnector: {fileID: 0}
+    joint: {fileID: 0}
+    hierarchyAttachment: 0
+    weldingAttachment: 0
+    selfIsInitiator: 0
+    autoReparented: 0
+    originalPositionDifference: {x: 0, y: 0, z: 0}
+    originalRotationDifference: {x: 0, y: 0, z: 0, w: 0}
+  connectorsToCheck: []
+  attachmentCandidateP: {fileID: 0}
+  attachmentCandidateDistanceP: 3.4028235e+38
+  attachmentCandidateAngleDiffP: 0
+  attachmentCandidatePositionP: {x: 0, y: 0, z: 0}
+  attachmentCandidateRotationP: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114197434871592274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134e88d28ea1eeb42b2e793fae68fec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inAttachingModeP: 0
+  overrideColliderLayers: 1
+  newLayer: 2
+  affectedRenderers:
+  - {fileID: 23362608940452868}
+  affectedColliders:
+  - {fileID: 65984931213936244}
+  affectedColliders2D: []
+  affectedRigidbodies:
+  - {fileID: 4048224576416466}
+  affectedRigidbodies2D: []
+  validColor: {r: 0, g: 1, b: 0, a: 0.33}
+  invalidColor: {r: 1, g: 0, b: 0, a: 0.33}
+  collidingColor: {r: 1, g: 0.7, b: 0, a: 0.33}
+  originalModes: []
+  originalColors: []
+  intersectChekers: []
+--- !u!114 &114329487625676088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b857560c28d624d45b0bea07a7537a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doNotAutoUpdate: 0
+  assemblyPartName: Demo3.Wall_brick
+  mainRigidbody: {fileID: 54525405091377736}
+  mainRigidbody2D: {fileID: 0}
+  rigidbodyInfo:
+    mass: 100
+    drag: 0
+    angularDrag: 0.05
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    useGravity: 1
+    interpolation: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 4048224576416466}
+  rigidbodyInfo2D:
+    mass: 0
+    linearDrag: 0
+    angularDrag: 0
+    gravityScale: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    interpolation: 0
+    sleepingMode: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  playmodeClone: {fileID: 0}
+  playmodeOriginal: {fileID: 0}
+  connectors:
+  - {fileID: 114337820605643654}
+  - {fileID: 114187775235825248}
+  - {fileID: 114147221597733026}
+  - {fileID: 114963591929540496}
+  - {fileID: 114340940843293234}
+  jointsConnectedToRigidbody: []
+  joints2DConnectedToRigidbody: []
+  weldedToObjectP: {fileID: 0}
+  attachAutomatically: 0
+  multipleAttachmentPortsAllowed: 1
+  destroyChildrenAlong: 0
+  drawGizmos: 0
+  attachmentHandler: {fileID: 114197434871592274}
+  stateHandler: {fileID: 0}
+  longConnection: 0
+  doNotConnectSideways: 0
+  includeEnvironmentInSidewaySearch: 0
+  autoReparentToSideways: 1
+  includeChildrenInAutoSideways: 1
+  createContainerWhenRoot: 1
+  container: {fileID: 0}
+  useSymmetryGroups: 1
+  symmetryGroups:
+  - connectors:
+    - {fileID: 114187775235825248}
+    - {fileID: 114147221597733026}
+  - connectors:
+    - {fileID: 114337820605643654}
+    - {fileID: 114963591929540496}
+  - connectors:
+    - {fileID: 114187775235825248}
+    - {fileID: 114147221597733026}
+    - {fileID: 114337820605643654}
+    - {fileID: 114963591929540496}
+  symmetricSiblings: []
+  uiInfo:
+    icon: {fileID: 21300000, guid: e3b1eba7f349fdf4482250622fe7877e, type: 3}
+    partName: Wall
+    partDescription: 
+  originalComponentsParams:
+    keys:
+    - {fileID: 65984931213936244}
+    - {fileID: 4048224576416466}
+    values:
+    - layer: 0
+      flag: 0
+      stateAffected: 0
+      attachmentAffected: 1
+    - layer: 0
+      flag: 0
+      stateAffected: 0
+      attachmentAffected: 1
+  mainRBodyInfo:
+    layer: 0
+    flag: 0
+    stateAffected: 0
+    attachmentAffected: 1
+  mainRBodyInfo2D:
+    layer: 0
+    flag: 0
+    stateAffected: 0
+    attachmentAffected: 0
+  modeP: 1
+  inAssemblyStateP: 0
+--- !u!114 &114337820605643654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518a449345e42524f9191ea9e99685fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawGizmos: 1
+  useOwnerRigidbody: 1
+  rigidbodyInfo:
+    mass: 0
+    drag: 0
+    angularDrag: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    useGravity: 0
+    interpolation: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  rigidbodyInfo2D:
+    mass: 0
+    linearDrag: 0
+    angularDrag: 0
+    gravityScale: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    interpolation: 0
+    sleepingMode: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  connectorName: Down
+  ownerP: {fileID: 114329487625676088}
+  layerP: 6
+  overrideLayerOptionsP: 0
+  overridenOptionsP:
+    name: 
+    inspectorColor: {r: 1, g: 0, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: -1
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 0
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 180
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 0
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 1
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  activeP: 1
+  stopReinitialization: 0
+  destroyFlag: 0
+  doNotMoveOwner: 0
+  drawControls: 0
+  isCurrentAttachmentPortP: 1
+  offsetP: {x: 0, y: 0.0000011920929, z: 0.5000002}
+  rotationP: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+  rotationShiftP: 0
+  attachmentInfoP:
+    attachmentType: 0
+    selfConnector: {fileID: 0}
+    otherConnector: {fileID: 0}
+    joint: {fileID: 0}
+    hierarchyAttachment: 0
+    weldingAttachment: 0
+    selfIsInitiator: 0
+    autoReparented: 0
+    originalPositionDifference: {x: 0, y: 0, z: 0}
+    originalRotationDifference: {x: 0, y: 0, z: 0, w: 0}
+  connectorsToCheck: []
+  attachmentCandidateP: {fileID: 0}
+  attachmentCandidateDistanceP: 3.4028235e+38
+  attachmentCandidateAngleDiffP: 0
+  attachmentCandidatePositionP: {x: 0, y: 0, z: 0}
+  attachmentCandidateRotationP: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114340940843293234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518a449345e42524f9191ea9e99685fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawGizmos: 1
+  useOwnerRigidbody: 1
+  rigidbodyInfo:
+    mass: 0
+    drag: 0
+    angularDrag: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    useGravity: 0
+    interpolation: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  rigidbodyInfo2D:
+    mass: 0
+    linearDrag: 0
+    angularDrag: 0
+    gravityScale: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    interpolation: 0
+    sleepingMode: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  connectorName: Ceiling
+  ownerP: {fileID: 114329487625676088}
+  layerP: 4
+  overrideLayerOptionsP: 0
+  overridenOptionsP:
+    name: 
+    inspectorColor: {r: 1, g: 0, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: -1
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 0
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 180
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 0
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 1
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  activeP: 1
+  stopReinitialization: 0
+  destroyFlag: 0
+  doNotMoveOwner: 0
+  drawControls: 0
+  isCurrentAttachmentPortP: 0
+  offsetP: {x: 0, y: -0.5, z: -0.525}
+  rotationP: {x: -0.49999997, y: -0.49999997, z: -0.49999997, w: 0.49999997}
+  rotationShiftP: 0
+  attachmentInfoP:
+    attachmentType: 0
+    selfConnector: {fileID: 0}
+    otherConnector: {fileID: 0}
+    joint: {fileID: 0}
+    hierarchyAttachment: 0
+    weldingAttachment: 0
+    selfIsInitiator: 0
+    autoReparented: 0
+    originalPositionDifference: {x: 0, y: 0, z: 0}
+    originalRotationDifference: {x: 0, y: 0, z: 0, w: 0}
+  connectorsToCheck: []
+  attachmentCandidateP: {fileID: 0}
+  attachmentCandidateDistanceP: 3.4028235e+38
+  attachmentCandidateAngleDiffP: 0
+  attachmentCandidatePositionP: {x: 0, y: 0, z: 0}
+  attachmentCandidateRotationP: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114963591929540496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914216296881240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518a449345e42524f9191ea9e99685fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawGizmos: 1
+  useOwnerRigidbody: 1
+  rigidbodyInfo:
+    mass: 0
+    drag: 0
+    angularDrag: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    useGravity: 0
+    interpolation: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  rigidbodyInfo2D:
+    mass: 0
+    linearDrag: 0
+    angularDrag: 0
+    gravityScale: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    interpolation: 0
+    sleepingMode: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  connectorName: Up
+  ownerP: {fileID: 114329487625676088}
+  layerP: 6
+  overrideLayerOptionsP: 0
+  overridenOptionsP:
+    name: 
+    inspectorColor: {r: 1, g: 0, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: -1
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 0
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 180
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 0
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 1
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  activeP: 1
+  stopReinitialization: 0
+  destroyFlag: 0
+  doNotMoveOwner: 0
+  drawControls: 0
+  isCurrentAttachmentPortP: 1
+  offsetP: {x: 0, y: 0, z: -0.5}
+  rotationP: {x: 0.70710677, y: 0.70710677, z: 0.00000022197246, w: 0.00000022197246}
+  rotationShiftP: 0
+  attachmentInfoP:
+    attachmentType: 0
+    selfConnector: {fileID: 0}
+    otherConnector: {fileID: 0}
+    joint: {fileID: 0}
+    hierarchyAttachment: 0
+    weldingAttachment: 0
+    selfIsInitiator: 0
+    autoReparented: 0
+    originalPositionDifference: {x: 0, y: 0, z: 0}
+    originalRotationDifference: {x: 0, y: 0, z: 0, w: 0}
+  connectorsToCheck: []
+  attachmentCandidateP: {fileID: 0}
+  attachmentCandidateDistanceP: 3.4028235e+38
+  attachmentCandidateAngleDiffP: 0
+  attachmentCandidatePositionP: {x: 0, y: 0, z: 0}
+  attachmentCandidateRotationP: {x: 0, y: 0, z: 0, w: 0}

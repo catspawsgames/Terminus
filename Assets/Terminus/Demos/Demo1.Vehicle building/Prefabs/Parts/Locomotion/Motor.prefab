@@ -1,0 +1,1285 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &135746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 449522}
+  - component: {fileID: 3322682}
+  - component: {fileID: 2396382}
+  - component: {fileID: 6481256}
+  - component: {fileID: 5420554}
+  - component: {fileID: 11422564}
+  - component: {fileID: 8290834}
+  m_Layer: 0
+  m_Name: Stator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &144458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 458222}
+  - component: {fileID: 11494276}
+  - component: {fileID: 11459764}
+  - component: {fileID: 11456678}
+  - component: {fileID: 11438244}
+  - component: {fileID: 11455966}
+  - component: {fileID: 11419838}
+  m_Layer: 0
+  m_Name: Motor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &164716
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 420888}
+  - component: {fileID: 3394602}
+  - component: {fileID: 2305386}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &176944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 411332}
+  - component: {fileID: 3326880}
+  - component: {fileID: 6509896}
+  - component: {fileID: 5429808}
+  - component: {fileID: 2319554}
+  - component: {fileID: 5927208}
+  - component: {fileID: 11445584}
+  m_Layer: 0
+  m_Name: Rotor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &411332
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.178, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.3, z: 0.3}
+  m_Children:
+  - {fileID: 420888}
+  m_Father: {fileID: 458222}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &420888
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164716}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
+  m_LocalPosition: {x: 1.560002, y: 0, z: 0}
+  m_LocalScale: {x: 0.33333334, y: 2, z: 0.33333334}
+  m_Children: []
+  m_Father: {fileID: 411332}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &449522
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135746}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.1, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 458222}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &458222
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.377, y: 1.756, z: 3.0600123}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 449522}
+  - {fileID: 411332}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &2305386
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164716}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 1061d71b1b3a6f143b20b3fbe400fe7a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &2319554
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176944}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 1061d71b1b3a6f143b20b3fbe400fe7a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &2396382
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135746}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 1061d71b1b3a6f143b20b3fbe400fe7a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &3322682
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135746}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &3326880
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176944}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &3394602
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164716}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5420554
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135746}
+  serializedVersion: 2
+  m_Mass: 40
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &5429808
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176944}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!59 &5927208
+HingeJoint:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176944}
+  m_ConnectedBody: {fileID: 5420554}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0.000000029802322, y: 1.7799996, z: 0}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 10
+    force: 1000
+    freeSpin: 1
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!64 &6481256
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6509896
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &8290834
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135746}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9acdc2c0380fe3643bf5cb11078e1359, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 1
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 40
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.025
+      value: 1
+      inSlope: -40.015934
+      outSlope: -40.015934
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.05
+      value: 0.5
+      inSlope: -10.0039835
+      outSlope: -10.0039835
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.1
+      value: 0.25
+      inSlope: -2.5009959
+      outSlope: -2.5009959
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.2
+      value: 0.125
+      inSlope: -0.62524897
+      outSlope: -0.62524897
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.4
+      value: 0.0625
+      inSlope: -0.15631224
+      outSlope: -0.15631224
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.8
+      value: 0.03125
+      inSlope: -0.03907806
+      outSlope: -0.03907806
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: -0.02500997
+      outSlope: -0.02500997
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &11419838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74b17fb8e597864596f37853593df9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - displayedName: Max Speed
+    componentName: ControllableMotor
+    parameterName: maxSpeed
+    controlType: 0
+    minMax: {x: 0, y: 99}
+  - displayedName: Power
+    componentName: ControllableMotor
+    parameterName: power
+    controlType: 0
+    minMax: {x: 0, y: 99}
+  - displayedName: Reverse
+    componentName: ControllableMotor
+    parameterName: reverse
+    controlType: 1
+    minMax: {x: 0, y: 0}
+  - displayedName: Auto-break
+    componentName: ControllableMotor
+    parameterName: autoBreak
+    controlType: 1
+    minMax: {x: 0, y: 0}
+--- !u!114 &11422564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518a449345e42524f9191ea9e99685fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawGizmos: 1
+  useOwnerRigidbody: 1
+  rigidbodyInfo:
+    mass: 0
+    drag: 0
+    angularDrag: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    useGravity: 0
+    interpolation: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  rigidbodyInfo2D:
+    mass: 0
+    linearDrag: 0
+    angularDrag: 0
+    gravityScale: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    interpolation: 0
+    sleepingMode: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  connectorName: Stator
+  ownerP: {fileID: 11494276}
+  layerP: 0
+  overrideLayerOptionsP: 0
+  overridenOptionsP:
+    name: 
+    inspectorColor: {r: 1, g: 0, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: -1
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 0
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 180
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 0
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 1
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  activeP: 1
+  stopReinitialization: 0
+  destroyFlag: 0
+  doNotMoveOwner: 0
+  drawControls: 0
+  isCurrentAttachmentPortP: 1
+  offsetP: {x: 0, y: -1.1, z: 0}
+  rotationP: {x: 0.49999997, y: 0.49999997, z: -0.49999997, w: 0.49999997}
+  rotationShiftP: 0
+  attachmentInfoP:
+    attachmentType: 0
+    selfConnector: {fileID: 0}
+    otherConnector: {fileID: 0}
+    joint: {fileID: 0}
+    hierarchyAttachment: 0
+    weldingAttachment: 0
+    selfIsInitiator: 0
+    autoReparented: 0
+    originalPositionDifference: {x: 0, y: 0, z: 0}
+    originalRotationDifference: {x: 0, y: 0, z: 0, w: 0}
+  connectorsToCheck:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  attachmentCandidateP: {fileID: 0}
+  attachmentCandidateDistanceP: 0
+  attachmentCandidateAngleDiffP: 0
+  attachmentCandidatePositionP: {x: 0, y: 0, z: 0}
+  attachmentCandidateRotationP: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &11438244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75dbed54bdb29d640a847ab4c07d514f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inAssemblyStateP: 0
+  affectedRigidbodies:
+  - {fileID: 449522}
+  - {fileID: 411332}
+  affectedRigidbodies2D: []
+--- !u!114 &11445584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518a449345e42524f9191ea9e99685fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawGizmos: 1
+  useOwnerRigidbody: 0
+  rigidbodyInfo:
+    mass: 0
+    drag: 0
+    angularDrag: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    useGravity: 0
+    interpolation: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  rigidbodyInfo2D:
+    mass: 0
+    linearDrag: 0
+    angularDrag: 0
+    gravityScale: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    interpolation: 0
+    sleepingMode: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  connectorName: Rotor
+  ownerP: {fileID: 11494276}
+  layerP: 0
+  overrideLayerOptionsP: 0
+  overridenOptionsP:
+    name: 
+    inspectorColor: {r: 1, g: 0, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: -1
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 0
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 180
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 0
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 1
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  activeP: 1
+  stopReinitialization: 0
+  destroyFlag: 0
+  doNotMoveOwner: 0
+  drawControls: 0
+  isCurrentAttachmentPortP: 0
+  offsetP: {x: -0.525, y: 0, z: 0}
+  rotationP: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
+  rotationShiftP: 0
+  attachmentInfoP:
+    attachmentType: 0
+    selfConnector: {fileID: 0}
+    otherConnector: {fileID: 0}
+    joint: {fileID: 0}
+    hierarchyAttachment: 0
+    weldingAttachment: 0
+    selfIsInitiator: 0
+    autoReparented: 0
+    originalPositionDifference: {x: 0, y: 0, z: 0}
+    originalRotationDifference: {x: 0, y: 0, z: 0, w: 0}
+  connectorsToCheck:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  attachmentCandidateP: {fileID: 0}
+  attachmentCandidateDistanceP: 0
+  attachmentCandidateAngleDiffP: 0
+  attachmentCandidatePositionP: {x: 0, y: 0, z: 0}
+  attachmentCandidateRotationP: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &11455966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91205f8c0597fbb49a3ff0014d6ef176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controls:
+  - name: clockwise
+    key: 119
+    altKey: 0
+    monitorUp: 1
+    monitorDown: 1
+    monitorPressed: 0
+    pressed: 0
+  - name: counter-cc
+    key: 115
+    altKey: 0
+    monitorUp: 1
+    monitorDown: 1
+    monitorPressed: 0
+    pressed: 0
+  - name: break
+    key: 32
+    altKey: 0
+    monitorUp: 1
+    monitorDown: 1
+    monitorPressed: 0
+    pressed: 0
+  pitchCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1.5
+      inSlope: 0.2032648
+      outSlope: 0.2032648
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  volumeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0.0809249
+      outSlope: 0.0809249
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  audioSource: {fileID: 8290834}
+  joint: {fileID: 5927208}
+  maxSpeed: 10
+  power: 10
+  powerMultiplier: 200
+  speedMultiplier: 100
+  maxVelocityForEffectsPurposes: 1000
+  reverse: 0
+  autoBreak: 0
+--- !u!114 &11456678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134e88d28ea1eeb42b2e793fae68fec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inAttachingModeP: 0
+  overrideColliderLayers: 1
+  newLayer: 2
+  affectedRenderers:
+  - {fileID: 2396382}
+  - {fileID: 2319554}
+  - {fileID: 2305386}
+  affectedColliders:
+  - {fileID: 6481256}
+  - {fileID: 6509896}
+  affectedColliders2D: []
+  affectedRigidbodies:
+  - {fileID: 449522}
+  - {fileID: 411332}
+  affectedRigidbodies2D: []
+  validColor: {r: 0, g: 1, b: 0, a: 0.33}
+  invalidColor: {r: 1, g: 0, b: 0, a: 0.33}
+  collidingColor: {r: 1, g: 0.7, b: 0, a: 0.33}
+  originalModes: []
+  originalColors: []
+  intersectChekers: []
+--- !u!114 &11459764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2da0c00a2af134bb502f98d9b78f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawGizmos: 1
+  useOwnerRigidbody: 1
+  rigidbodyInfo:
+    mass: 0
+    drag: 0
+    angularDrag: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    useGravity: 0
+    interpolation: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  rigidbodyInfo2D:
+    mass: 0
+    linearDrag: 0
+    angularDrag: 0
+    gravityScale: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    interpolation: 0
+    sleepingMode: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  connectorName: Stator surface
+  ownerP: {fileID: 11494276}
+  layerP: 0
+  overrideLayerOptionsP: 0
+  overridenOptionsP:
+    name: 
+    inspectorColor: {r: 1, g: 0, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: -1
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 0
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 180
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 0
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 1
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  activeP: 1
+  stopReinitialization: 0
+  destroyFlag: 0
+  colliders:
+  - {fileID: 6481256}
+  colliders2D: []
+  symmetryType: 2
+  symmetryPoint: {x: 0, y: 0, z: 0}
+  symmetryVector: {x: 1, y: 0, z: 0}
+  symmetryRotation: {x: 0, y: 0, z: 0, w: 0}
+  maxAttachedPorts: 0
+  attachmentsInfoP: []
+  maxSymmetryObjectsP: 15
+--- !u!114 &11494276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b857560c28d624d45b0bea07a7537a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doNotAutoUpdate: 0
+  assemblyPartName: Motor
+  mainRigidbody: {fileID: 5420554}
+  mainRigidbody2D: {fileID: 0}
+  rigidbodyInfo:
+    mass: 40
+    drag: 0
+    angularDrag: 0.05
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    useGravity: 1
+    interpolation: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 449522}
+  rigidbodyInfo2D:
+    mass: 0
+    linearDrag: 0
+    angularDrag: 0
+    gravityScale: 0
+    centerOfMass: {x: 0, y: 0, z: 0}
+    isKinematic: 0
+    interpolation: 0
+    sleepingMode: 0
+    collisionDetection: 0
+    constraints: 0
+    parent: {fileID: 0}
+  playmodeClone: {fileID: 0}
+  playmodeOriginal: {fileID: 0}
+  connectors:
+  - {fileID: 11459764}
+  - {fileID: 11445584}
+  - {fileID: 11422564}
+  jointsConnectedToRigidbody:
+  - {fileID: 5927208}
+  joints2DConnectedToRigidbody: []
+  weldedToObjectP: {fileID: 0}
+  attachAutomatically: 0
+  multipleAttachmentPortsAllowed: 0
+  destroyChildrenAlong: 0
+  drawGizmos: 1
+  attachmentHandler: {fileID: 11456678}
+  stateHandler: {fileID: 11438244}
+  longConnection: 0
+  doNotConnectSideways: 1
+  includeEnvironmentInSidewaySearch: 0
+  autoReparentToSideways: 0
+  includeChildrenInAutoSideways: 0
+  createContainerWhenRoot: 1
+  container: {fileID: 0}
+  useSymmetryGroups: 0
+  symmetryGroups: []
+  symmetricSiblings: []
+  uiInfo:
+    icon: {fileID: 21300000, guid: f93e9a59425d130418eb66c1770e584b, type: 3}
+    partName: Motor
+    partDescription: 
+  originalComponentsParams:
+    keys:
+    - {fileID: 6481256}
+    - {fileID: 6509896}
+    - {fileID: 411332}
+    - {fileID: 449522}
+    values:
+    - layer: 0
+      flag: 0
+      stateAffected: 0
+      attachmentAffected: 1
+    - layer: 0
+      flag: 0
+      stateAffected: 0
+      attachmentAffected: 1
+    - layer: 0
+      flag: 0
+      stateAffected: 1
+      attachmentAffected: 1
+    - layer: 0
+      flag: 0
+      stateAffected: 1
+      attachmentAffected: 1
+  mainRBodyInfo:
+    layer: 0
+    flag: 0
+    stateAffected: 1
+    attachmentAffected: 1
+  mainRBodyInfo2D:
+    layer: 0
+    flag: 0
+    stateAffected: 0
+    attachmentAffected: 0
+  modeP: 1
+  inAssemblyStateP: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: controls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: assemblyPartName
+      value: Motor
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UseMotor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Motor.freeSpin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Motor.targetVelocity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Motor.force
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: joint
+      value: 
+      objectReference: {fileID: 5927208}
+    - target: {fileID: 0}
+      propertyPath: freeSpin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[0].name
+      value: clockwise
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[1].name
+      value: counter-cc
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[0].key
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[1].key
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[1].monitorUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[1].monitorDown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[0].monitorUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[0].monitorDown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: power
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stator
+      value: 
+      objectReference: {fileID: 5420554}
+    - target: {fileID: 0}
+      propertyPath: rotor
+      value: 
+      objectReference: {fileID: 5429808}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[2].name
+      value: break
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[2].key
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[2].monitorUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: controls.Array.data[2].monitorDown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[0].displayedName
+      value: Max Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[0].componentName
+      value: ControllableMotor
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[0].parameterName
+      value: maxSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[0].minMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[0].minMax.y
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[1].displayedName
+      value: Power
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[1].componentName
+      value: ControllableMotor
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[1].parameterName
+      value: power
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[1].minMax.y
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DopplerLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MaxDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
+      value: .0250000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
+      value: -40.015934
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outSlope
+      value: -40.015934
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: -10.0039835
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: -10.0039835
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pitchCurve.m_Curve.Array.data[0].value
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pitchCurve.m_Curve.Array.data[1].value
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: volumeCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: volumeCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: volumeCurve.m_Curve.Array.data[1].inSlope
+      value: .0809248984
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: volumeCurve.m_Curve.Array.data[1].outSlope
+      value: .0809248984
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pitchCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: connectorRigidbody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: connectorName
+      value: Stator surface
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[2].displayedName
+      value: Reverse
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[2].controlType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[2].parameterName
+      value: reverse
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[2].minMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pitchCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pitchCurve.m_Curve.Array.data[1].inSlope
+      value: .203264803
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pitchCurve.m_Curve.Array.data[1].outSlope
+      value: .203264803
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9acdc2c0380fe3643bf5cb11078e1359, type: 3}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[3].displayedName
+      value: Auto-break
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: parameters.Array.data[3].parameterName
+      value: autoBreak
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: powerMultiplier
+      value: 200
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 144458}
+  m_IsPrefabParent: 1

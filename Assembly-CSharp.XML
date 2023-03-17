@@ -1,0 +1,2434 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Assembly-CSharp</name>
+    </assembly>
+    <members>
+        <member name="T:TiaanDotCom.Unity3D.EditorTools.LineEndingsEditMenu">
+            <summary>
+            Implements menu items for the Unity Editor to perform
+            end-of-line conversion and fix issues such as for the
+            following: "There are inconsistent line endings in the
+            'Assets/.../*.cs' script. Some are Mac OS X (UNIX) and
+            some are Windows. This might lead to incorrect line
+            numbers in stacktraces and compiler errors."
+            </summary>
+        </member>
+        <member name="T:Terminus.Demo1.AdjustableParametersHandler">
+            <summary>
+            Component working together with <see cref="T:Terminus.Demo1.BuilderUIHandler"/> to allow player to adjust some parameters of attachable part(<see cref="T:Terminus.TerminusObject"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.AdjustableParametersHandler.parameters">
+            <summary>
+            Parameters that can be adjusted.
+            </summary>
+        </member>
+        <member name="T:Terminus.Demo1.AdjustableParametersHandler.AdjustableParameter">
+            <summary>
+            Information about adjustable parameter
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.AdjustableParametersHandler.AdjustableParameter.displayedName">
+            <summary>
+            Name of adjustable parameter displayed to the player.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.AdjustableParametersHandler.AdjustableParameter.componentName">
+            <summary>
+            Class name of component that contains field or property corresponding to this parameter.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.AdjustableParametersHandler.AdjustableParameter.parameterName">
+            <summary>
+            Name of field or property corresponding to this parameter.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.AdjustableParametersHandler.AdjustableParameter.controlType">
+            <summary>
+            The type of the control <see cref="T:Terminus.Demo1.BuilderUIHandler"/> will show to the player.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.AdjustableParametersHandler.AdjustableParameter.minMax">
+            <summary>
+            Min,Max(X,Y) for Slider control, have no effect on Toggle control.
+            </summary>
+        </member>
+        <member name="T:Terminus.Demo1.AdjustableParametersHandler.UIControlTypes">
+            <summary>
+             Possible control types for adjustable parameters to be drawn by <see cref="T:Terminus.Demo1.BuilderUIHandler"/>.
+             </summary>
+        </member>
+        <member name="M:Terminus.Demo1.AdjustableParametersHandler.SetParameterValue(System.Int32,System.Object)">
+            <summary>
+            Sets parameter value.
+            </summary>
+            <param name="index">Index of parameter inside <see cref="F:Terminus.Demo1.AdjustableParametersHandler.parameters"/> .</param>
+            <param name="newValue">New value.</param>
+        </member>
+        <member name="M:Terminus.Demo1.AdjustableParametersHandler.GetParameterValue(System.Int32)">
+            <summary>
+            Gets parameter value.
+            </summary>
+            <returns>The parameter value.</returns>
+            <param name="index">Index of parameter inside <see cref="F:Terminus.Demo1.AdjustableParametersHandler.parameters"/> .</param>
+        </member>
+        <member name="T:Terminus.Demo1.BuilderUIHandler">
+            <summary>
+            Handles UI events and objects for Wheels of Insanity Terminus Demo.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.timeScale">
+            <summary>
+            Time scale when not paused.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.startBlock">
+            <summary>
+            Start block for "Center on start block" button.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.currentObject">
+            <summary>
+            Current selected object. Object panel will be drawn for this object.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.cameraController">
+            <summary>
+            Current active <see cref="T:Terminus.Demo1.AssemblyCameraController"/>
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.placer">
+            <summary>
+            Current active <see cref="T:Terminus.Placer"/> 
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.mainCanvas">
+            <summary>
+            Canvas used to render UI. For enabling and disabling.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.blockGroups">
+            <summary>
+            Defines contents of main building menu.
+            </summary>
+        </member>
+        <member name="T:Terminus.Demo1.BuilderUIHandler.BuildableBlock">
+            <summary>
+            Buildable block definition for main building menu.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.BuildableBlock.name">
+            <summary>
+            Displayed name.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.BuildableBlock.TerminusObject">
+            <summary>
+            <see cref="F:Terminus.Demo1.BuilderUIHandler.BuildableBlock.TerminusObject"/> prefab.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.BuildableBlock.sprite">
+            <summary>
+            Image for build button.
+            </summary>
+        </member>
+        <member name="T:Terminus.Demo1.BuilderUIHandler.BlockGroup">
+            <summary>
+            Defines group of buildable block that will be joined together as a tab of build menu.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.BlockGroup.name">
+            <summary>
+            Displayed name.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.BuilderUIHandler.BlockGroup.blocks">
+            <summary>
+            Buildable blocks.
+            </summary>
+        </member>
+        <member name="M:Terminus.Demo1.BuilderUIHandler.UpdateCurrentObject(Terminus.TerminusObject)">
+            <summary>
+            Changes current selected object and redraws object panel.
+            </summary>
+            <param name="newObject">New selected object. Null to cancel selection.</param>
+        </member>
+        <member name="T:Terminus.Demo1.ControllablePart">
+            <summary>
+            Allows to control attachable part(<see cref="T:Terminus.TerminusObject"/>) at Wheels of Insanity Terminus Demo. Also works with <see cref="T:Terminus.Demo1.BuilderUIHandler"/> to allow player to rebind controls.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.ControllablePart.controls">
+            <summary>
+            List of possible control inputs.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.ControllablePart.ControlMonitor.name">
+            <summary>
+            Name for displaying parameter inside <see cref="T:Terminus.Demo1.BuilderUIHandler"/>s object window.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.ControllablePart.ControlMonitor.key">
+            <summary>
+            Keycode to monitor.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.ControllablePart.ControlMonitor.altKey">
+            <summary>
+            Alternative keycode to monitor.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.ControllablePart.ControlMonitor.monitorUp">
+            <summary>
+            Should <c>protected ControlUp(int index)</c> event be fired when <see cref="F:Terminus.Demo1.ControllablePart.ControlMonitor.key"/> or <see cref="F:Terminus.Demo1.ControllablePart.ControlMonitor.altKey"/> are lifted up?
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.ControllablePart.ControlMonitor.monitorDown">
+            <summary>
+            Should <c>protected ControlDown(int index)</c> event be fired when <see cref="F:Terminus.Demo1.ControllablePart.ControlMonitor.key"/> or <see cref="F:Terminus.Demo1.ControllablePart.ControlMonitor.altKey"/> are pressed down?
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.ControllablePart.ControlMonitor.monitorPressed">
+            <summary>
+            Should <c>protected ControlPressed(int index)</c> event be fired every frame when <see cref="F:Terminus.Demo1.ControllablePart.ControlMonitor.key"/> or <see cref="F:Terminus.Demo1.ControllablePart.ControlMonitor.altKey"/> are pressed?
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.ControllablePart.ControlMonitor.pressed">
+            <summary>
+            True when control is down, false otherwise. Works independently from <see cref="F:Terminus.Demo1.ControllablePart.ControlMonitor.monitorPressed"/>.
+            </summary>
+        </member>
+        <member name="M:Terminus.Demo1.ControllablePart.KeyDown(System.Int32)">
+            <summary>
+            Pressed down control. Can be called to simulate control input without key being actually pressed.
+            </summary>
+            <param name="index">Index of control from see cref="ControllablePart.ControlMonitor"/>.</param>
+        </member>
+        <member name="M:Terminus.Demo1.ControllablePart.KeyUp(System.Int32)">
+            <summary>
+            Lifts control up. Can be called to simulate control input without key being actually pressed.
+            </summary>
+            <param name="index">Index of control from see cref="ControllablePart.ControlMonitor"/>.</param>
+        </member>
+        <member name="T:Terminus.Demo1.InputHandler">
+            <summary>
+            Handles pre-defined UI input processing for Wheels of Insanity Terminus Demo. <see cref="T:Terminus.Demo1.ControllablePart"/> and its derivatives handles input for vehicle parts.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.InputHandler.UIHandler">
+            <summary>
+            Active UI handler on current scene.
+            </summary>
+        </member>
+        <member name="F:Terminus.Demo1.InputHandler.disableControlsOnFocus">
+            <summary>
+            Ignore user input if UI is focused on one of these InputFields.
+            </summary>
+        </member>
+        <member name="T:Terminus.AttachmentHandler">
+            <summary>
+            Handles changing several component parameters when attached to <see cref="T:Terminus.TerminusObject"/> that is being placed by <see cref="T:Terminus.Placer"/> or similiar process.
+            </summary>
+            <remarks>
+            This is empty base class, real functionality is contained inside derivative <see cref="T:Terminus.StandardAttachmentHandler"/>.
+            </remarks>
+            /// <seealso cref="T:Terminus.StandardAttachmentHandler"/> 
+        </member>
+        <member name="F:Terminus.AttachmentHandler.overrideColliderLayers">
+            <summary>
+            If true, <see cref="F:Terminus.AttachmentHandler.affectedColliders"/> gameObjects layers will be changed to <see cref="F:Terminus.AttachmentHandler.newLayer"/> and back when <see cref="T:Terminus.TerminusObject"/> is being placed.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentHandler.newLayer">
+            <summary>
+            If <see cref="F:Terminus.AttachmentHandler.overrideColliderLayers"/> set to true, this will be new layer for <see cref="F:Terminus.AttachmentHandler.affectedColliders"/> gameObjects when <see cref="T:Terminus.TerminusObject"/>  is being placed.
+            </summary>
+        </member>
+        <member name="P:Terminus.AttachmentHandler.inAttachingMode">
+            <summary>
+            Returns true if <see cref="T:Terminus.TerminusObject"/> is being placed at the moment.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentHandler.affectedRenderers">
+            <summary>
+            Renderers belonging to owner <see cref="T:Terminus.TerminusObject"/> that should be manipulated when this component is being placed.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentHandler.affectedColliders">
+            <summary>
+            Colliders belonging to owner <see cref="T:Terminus.TerminusObject"/> that should be manipulated when this component is being placed.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentHandler.affectedColliders2D">
+            <summary>
+            Colliders2D belonging to owner <see cref="T:Terminus.TerminusObject"/> that should be manipulated when this component is being placed.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentHandler.affectedRigidbodies">
+            <summary>
+            Rigidbodies belonging to owner <see cref="T:Terminus.TerminusObject"/> that should be manipulated when this component is being placed.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentHandler.affectedRigidbodies2D">
+            <summary>
+            Rigidbodies2D belonging to owner <see cref="T:Terminus.TerminusObject"/> that should be manipulated when this component is being placed.
+            </summary>
+        </member>
+        <member name="M:Terminus.AttachmentHandler.OnAttachmentStart">
+            <summary>
+            Called when <see cref="T:Terminus.TerminusObject"/> begins being in attaching mode
+            </summary>
+        </member>
+        <member name="M:Terminus.AttachmentHandler.OnAttached">
+            <summary>
+            Called when <see cref="T:Terminus.TerminusObject"/> stops being in attaching mode
+            </summary>
+        </member>
+        <member name="M:Terminus.AttachmentHandler.ValidPlacementUpdate">
+            <summary>
+            Called every update in which this <see cref="T:Terminus.TerminusObject"/> placement is valid, returns if it still valid after checks done by this component 
+            </summary>
+            <remarks>
+            Called by <see cref="T:Terminus.Placer"/> 
+            </remarks>
+            <seealso cref="M:Terminus.AttachmentHandler.InvalidPlacementUpdate"/>
+        </member>
+        <member name="M:Terminus.AttachmentHandler.InvalidPlacementUpdate">
+            <summary>
+            Called every update in which this <see cref="T:Terminus.TerminusObject"/> placement is invalid
+            </summary>
+            /// <remarks>
+            Called by <see cref="T:Terminus.Placer"/> 
+            </remarks>
+            <seealso cref="M:Terminus.AttachmentHandler.ValidPlacementUpdate"/>
+        </member>
+        <member name="T:Terminus.Connector">
+            <summary>
+            Base class for connectors. Connectors are objects through which <see cref="T:Terminus.TerminusObject"/>s can be attached to each other.
+            </summary>
+            <remarks>
+            This class itself is empty, <see cref="T:Terminus.Port"/> and <see cref="T:Terminus.Surface"/> derivatives are containing real functionality.
+            </remarks>
+            <seealso cref="T:Terminus.Port"/>
+            <seealso cref="T:Terminus.Surface"/>
+            <seealso cref="T:Terminus.TerminusObject"/>
+        </member>
+        <member name="F:Terminus.Connector.useOwnerRigidbody">
+            <summary>
+            <see cref="P:Terminus.Connector.connectorRigidbody"/> will provide <see cref="F:Terminus.TerminusObject.mainRigidbody"/> instead.
+            </summary>
+        </member>
+        <member name="P:Terminus.Connector.connectorRigidbody">
+            <summary>
+            Rigidbody associated with connector. Used in physics-based attachments.
+            </summary>
+        </member>
+        <member name="P:Terminus.Connector.connectorRigidbody2D">
+            <summary>
+            Rigidbody2D associated with connector. Used in 2D physics-based attachments.
+            </summary>
+        </member>
+        <member name="F:Terminus.Connector.connectorName">
+            <summary>
+            Unique name of this connector. Single <see cref="T:Terminus.TerminusObject"/> can't have two connectors with the same name.
+            </summary>
+        </member>
+        <member name="F:Terminus.Connector.stopReinitialization">
+            <summary>
+            If set to true, changing connector settings will not cause reinitialization of this connector by <see cref="T:Terminus.Manager"/>. Use this to change connector parameters in bulk.
+            </summary>
+            <example>
+            Example of bulk parameter changing.
+            <code>
+            public Terminus.Port portConnector;
+            
+            public void ChangePortOptions()
+            {
+            	//disabling auto-reinitialization
+            	portConnector.stopReinitialization = true;
+            	portConnector.layer = 1;
+            	portConnector.isCurrentAttachmentPort = true;
+            	portConnector.offset = Vector3.zero;
+            	portConnector.stopReinitialization = false;
+            }
+            </code>
+            </example>
+        </member>
+        <member name="P:Terminus.Connector.destroyFlag">
+            <summary>
+            Returns true if connector is being destroyed.
+            </summary>
+        </member>
+        <member name="P:Terminus.Connector.owner">
+            <summary>
+            <see cref="T:Terminus.TerminusObject"/> connector belongs to. Connector should always belong to TerminusObject. 
+            </summary>
+            <remarks>
+            Connector can be on different GameObject from its owner, as long as owner is designated.
+            </remarks>
+        </member>
+        <member name="P:Terminus.Connector.layer">
+            <summary>
+            Terminus layer of connector. Terminus <see cref="F:Terminus.Settings.layers"/> are separate from Unity layers and are set up from "Layers" tab in Terminus window.
+            </summary>
+            <remarks>
+            Determines behaviour of this connector and also what other connectors can influence it.
+            </remarks>
+        </member>
+        <member name="P:Terminus.Connector.overrideLayerOptions">
+            <summary>
+            If true, <see cref="P:Terminus.Connector.overridenOptions"/> are used instead of options inherited from <see cref="P:Terminus.Connector.layer"/> 
+            </summary>
+        </member>
+        <member name="P:Terminus.Connector.overridenOptions">
+            <summary>
+            Options to use for this connector if <see cref="P:Terminus.Connector.overrideLayerOptions"/> set to true.
+            </summary>
+            <value>The overriden options.</value>
+        </member>
+        <member name="P:Terminus.Connector.active">
+            <summary>
+            Prevents connector from participating in attchment and influence events when set to false.
+            </summary>
+        </member>
+        <member name="P:Terminus.Connector.portOptions">
+            <summary>
+            Returns current options of connector.
+            </summary>
+            <seealso cref="P:Terminus.Connector.layer"/>
+            <seealso cref="P:Terminus.Connector.overrideLayerOptions"/> 
+            <seealso cref="P:Terminus.Connector.overridenOptions"/>
+        </member>
+        <member name="P:Terminus.Connector.isAttachable">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Terminus.Connector"/> can be attached to other connectors.
+            </summary>
+            <value><c>true</c> if is attachable; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Terminus.Connector.isOccupied">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Terminus.Connector"/> attachment slots(1 for <see cref="T:Terminus.Port"/>, several for <see cref="T:Terminus.Surface"/>) are full .
+            </summary>
+            <value><c>true</c> if is occupied; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Terminus.Connector.isAccepting">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Terminus.Connector"/> can accept attachments from other connector.
+            </summary>
+        </member>
+        <member name="P:Terminus.Connector.layerBit">
+            <summary>
+            Returns int value with single bit corresponding to <see cref="P:Terminus.Connector.layer"/> 
+            </summary>
+        </member>
+        <member name="P:Terminus.Connector.index">
+            <summary>
+            Gets index of connector inside owner <see cref="F:Terminus.TerminusObject.connectors"/> .
+            </summary>
+        </member>
+        <member name="P:Terminus.Connector.attachmentsInfo">
+            <summary>
+            List of active attachments this connector is participating.
+            </summary>
+        </member>
+        <member name="P:Terminus.Connector.globalRotation">
+            <summary>
+            Worldspace rotation of this connector.
+            </summary>
+        </member>
+        <member name="P:Terminus.Connector.globalPosition">
+            <summary>
+            Worldspace position of this connector.
+            </summary>
+        </member>
+        <member name="M:Terminus.Connector.Initialize">
+            <summary>
+            Initializes(or re-initializes) this connector with <see cref="T:Terminus.Manager"/> component. Called when connector options or status changes.
+            </summary>
+        </member>
+        <member name="M:Terminus.Connector.GetAttachmentInfo(Terminus.Connector)">
+            <summary>
+            Gets attachment of this connector with provided connector if it exists. <see cref="F:Terminus.AttachmentInfo.attachmentType"/> set to <see cref="F:Terminus.AttachmentInfo.Types.none"/> if no such attachment exists.
+            </summary>
+            <param name="connector">Opposite connector to search for.</param>
+        </member>
+        <member name="M:Terminus.Connector.RegisterAttachmentFromConnector(Terminus.AttachmentInfo)">
+            <summary>
+            Registers attachment from other connector. Used for internal puposes, should not be called unless you know excactly what you're doing.
+            </summary>
+        </member>
+        <member name="M:Terminus.Connector.RegisterDetachmentFromConnector(Terminus.Connector)">
+            <summary>
+            Registers detachment from other connector. Used for internal puposes, should not be called unless you know excactly what you're doing.
+            </summary>
+        </member>
+        <member name="M:Terminus.Connector.GetSymmetryPositions(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Component)">
+            <summary>
+            Gets provided number of symmetric positions for attaching multiple <see cref="T:Terminus.TerminusObject"/>s symmetrically.
+            </summary>
+            <param name="positionCount">Position count. Use <see cref="M:Terminus.Connector.AchievableSymmetryCount(System.Int32)"/> to prevent over-drafting symmetry count.</param>
+            <param name="originalPosition">Global position of <see cref="T:Terminus.Port"/>  that tries to attach to this connector.</param>
+            <param name="originalRotation">Global rotation of <see cref="T:Terminus.Port"/>  that tries to attach to this connector.</param>
+            <param name="collider">Collider provided by raycasting placement of part. Only comes into play when using <see cref="T:Terminus.Surface"/> connector.</param>
+        </member>
+        <member name="M:Terminus.Connector.AchievableSymmetryCount(System.Int32)">
+            <summary>
+            Calculates closest number of possible symmetric points based on provided desired number. 
+            </summary>
+            <returns>The symmetry count.</returns>
+            <param name="desiredCount">Desired count.</param>
+            <seealso cref="F:Terminus.TerminusObject.symmetryGroups"/>
+            <seealso cref="F:Terminus.Surface.symmetryType"/>
+        </member>
+        <member name="T:Terminus.LongConnection">
+            <summary>
+            Helper component that handles special type of <see cref="T:Terminus.TerminusObject"/>s such as struts.
+            </summary>
+            <remarks>
+            Long connection TerminusObject is different in its placement procedure since it requres attaching 2 <see cref="F:Terminus.TerminusObject.connectors"/> instead of one.
+            It also modifies itself depending on positions of its connectors.
+            This is base class, real functionality is contained in derivatives <see cref="T:Terminus.LongConnectionMesh"/> and <see cref="T:Terminus.LongConnectionLRend"/>.
+            </remarks>
+            <seealso cref="T:Terminus.LongConnectionMesh"/>
+            <seealso cref="T:Terminus.LongConnectionLRend"/>
+        </member>
+        <member name="F:Terminus.LongConnection.use2D">
+            <summary>
+            Use calculations in 2D space.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnection.offset1">
+            <summary>
+            Offset from <see cref="T:Terminus.Connector"/> with index = 0 from <see cref="F:Terminus.TerminusObject.connectors"/> for generating geometry.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnection.offset2">
+            <summary>
+            Offset from <see cref="T:Terminus.Connector"/> with index = 1 from <see cref="F:Terminus.TerminusObject.connectors"/> for generating geometry.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnection.realtimeRecalculate">
+            <summary>
+            If set to true, geometry of long connection will be recalculated in real-time. If set to false, it will be calculated on the moment of attachment.
+            </summary>
+            <seealso cref="M:Terminus.LongConnection.Recalculate"/>
+        </member>
+        <member name="M:Terminus.LongConnection.LongConnectionAfterAttachment(Terminus.AttachmentInfo)">
+            <summary>
+            Called by <see cref="T:Terminus.Port"/> after its been attached.
+            </summary>
+        </member>
+        <member name="M:Terminus.LongConnection.Recalculate">
+            <summary>
+            Can be called manually to recalculate long connection geometry.
+            </summary>
+        </member>
+        <member name="T:Terminus.StateHandler">
+            <summary>
+            Handles changing rigidbodies properties when <see cref="P:Terminus.TerminusObject.inAssemblyState"/> is changed.
+            </summary>
+            <remarks>
+            This is empty base class, real functionality is contained inside derivative <see cref="T:Terminus.StandardStateHandler"/>.
+            </remarks>
+            <seealso cref="T:Terminus.StandardStateHandler"/> 
+        </member>
+        <member name="P:Terminus.StateHandler.inAssemblyState">
+            <summary>
+            Internal assembly state. Automatically tries to duplicate <see cref="P:Terminus.TerminusObject.inAssemblyState"/> 
+            </summary>
+        </member>
+        <member name="F:Terminus.StateHandler.affectedRigidbodies">
+            <summary>
+            Rigidbodies belonging to owner <see cref="T:Terminus.TerminusObject"/> that should be manipulated when <see cref="P:Terminus.TerminusObject.inAssemblyState"/> is changed.
+            </summary>
+        </member>
+        <member name="F:Terminus.StateHandler.affectedRigidbodies2D">
+            <summary>
+            Rigidbodies2D belonging to owner <see cref="T:Terminus.TerminusObject"/> that should be manipulated when <see cref="P:Terminus.TerminusObject.inAssemblyState"/> is changed.
+            </summary>
+        </member>
+        <member name="M:Terminus.StateHandler.ExitAssemblyState">
+            <summary>
+            Called when see cref="TerminusObject.inAssemblyState"/> set to false
+            </summary>
+        </member>
+        <member name="M:Terminus.StateHandler.EnterAssemblyState">
+            <summary>
+            Called when see cref="TerminusObject.inAssemblyState"/> set to false
+            </summary>
+        </member>
+        <member name="T:Terminus.AttachmentInfo">
+            <summary>
+            Contains information about connector-to-connector attachments. All hierarchy information inside Terminus are stored through trees of attachmentInfos. AttachmentInfo objects usually associated with owner connector.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentInfo.attachmentType">
+            <summary>
+            Type of this attachment. Determined at the moment of attachment by port layer.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentInfo.selfConnector">
+            <summary>
+            Connector that own this attachmentInfo.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentInfo.otherConnector">
+            <summary>
+            Connector opposite of attachmentInfo owner.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentInfo.joint">
+            <summary>
+            If attachment is performed through physics joint, this field will contain joint component (regardless if it's Joint or Joint2D).
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentInfo.hierarchyAttachment">
+            <summary>
+            If true, attachment is performed through parenting initiating TerminusObject transfor to recieving TerminusObject transform. Do not exclude joint attachment, although not recommended.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentInfo.selfIsInitiator">
+            <summary>
+            If true, selfConnector initiated attachment. If false, otherConnector is initiator.
+            </summary>
+        </member>
+        <member name="T:Terminus.AttachmentInfo.Types">
+            <summary>
+            Possible types of attachments.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentInfo.Types.none">
+            <summary>
+            Indicates that owner connector isn't attached at the moment.
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentInfo.Types.parent">
+            <summary>
+            selfConnector is parent of otherConnector in Terminus hierarchy.(Terminus hierarchy are separate from Unity transform hierarchy)
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentInfo.Types.child">
+            <summary>
+            selfConnector is child of otherConnector in Terminus hierarchy.(Terminus hierarchy are separate from Unity transform hierarchy)
+            </summary>
+        </member>
+        <member name="F:Terminus.AttachmentInfo.Types.sideway">
+            <summary>
+            Sideway connection isn't affecting Terminus hierarchy, but still performs usual attachment actions (Event firing and optional physics joing creating).
+            </summary>
+        </member>
+        <member name="T:Terminus.PositionInfo">
+            <summary>
+            Structure for storing spatial information of <see cref="T:Terminus.Connector"/>s.
+            </summary>
+        </member>
+        <member name="T:Terminus.ProjectManager">
+            <summary>
+            Class for accessing Terminus <see cref="T:Terminus.Settings"/>. All method are static.
+            </summary>
+        </member>
+        <member name="P:Terminus.ProjectManager.settings">
+            <summary>
+            Gets current <see cref="T:Terminus.Settings"/> or creates instance of it if it's null.
+            </summary>
+        </member>
+        <member name="M:Terminus.ProjectManager.DefaultSettings">
+            <summary>
+            Deletes current <see cref="T:Terminus.Settings"/> and creates default instance of it. Works only when called from editor.
+            </summary>
+        </member>
+        <member name="M:Terminus.ProjectManager.CreateSettingsAsset(System.String)">
+            <summary>
+            Creates the settings asset. Editor-only.
+            </summary>
+            <returns>The settings asset.</returns>
+            <param name="path">Path to save <see cref="T:Terminus.Settings"/> asset.</param>
+        </member>
+        <member name="T:Terminus.SerializableAssembly">
+            <summary>
+            ScriptableObject allowing you to save your creations and load/spawn them as you please.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.objects">
+            <summary>
+            Information about construction. Fully serializable.
+            </summary>
+        </member>
+        <member name="T:Terminus.SerializableAssembly.ObjectInfo">
+            <summary>
+            Information about singular part(<see cref="T:Terminus.TerminusObject"/>) of construction. Fully serializable.
+            </summary>
+            <remarks>
+            Part with index = 0 is considered root part. All spatial info is saved in this part localspace.
+            </remarks>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ObjectInfo.name">
+            <summary>
+            Name of part. See <see cref="P:Terminus.TerminusObject.getPartName"/> 
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ObjectInfo.id">
+            <summary>
+            ID (index) of part. Used in <see cref="F:Terminus.SerializableAssembly.ObjectInfo.connectors"/> and <see cref="F:Terminus.SerializableAssembly.ObjectInfo.symmetricSiblings"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ObjectInfo.position">
+            <summary>
+            Position of part(<see cref="T:Terminus.TerminusObject"/>) in root part space.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ObjectInfo.rotation">
+            <summary>
+            Rotation of part(<see cref="T:Terminus.TerminusObject"/>) in root part space.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ObjectInfo.connectors">
+            <summary>
+            Attached <see cref="T:Terminus.Connector"/>s of part(<see cref="T:Terminus.TerminusObject"/>) and information about attachment.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ObjectInfo.symmetricSiblings">
+            <summary>
+            List of symmetric siblings of this part(<see cref="T:Terminus.TerminusObject"/>).
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ObjectInfo.parameters">
+            <summary>
+            Serialized parameters of component of this part. See <see cref="T:Terminus.Settings.AssemblySerializableParameters"/> 
+            </summary>
+        </member>
+        <member name="T:Terminus.SerializableAssembly.ConnectorInfo">
+            <summary>
+            Struct containing information about attached <see cref="T:Terminus.Connector"/>  and attachment parameters.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ConnectorInfo.name">
+            <summary>
+            Name of <see cref="T:Terminus.Connector"/>. See <see cref="F:Terminus.Connector.connectorName"/>
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ConnectorInfo.position">
+            <summary>
+            Position of this <see cref="T:Terminus.Connector"/> in root part space.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ConnectorInfo.rotation">
+            <summary>
+            Position of this <see cref="T:Terminus.Connector"/> in root part space.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ConnectorInfo.otherObjectIndex">
+            <summary>
+            Index(<see cref="F:Terminus.SerializableAssembly.ObjectInfo.id"/>) of part that this <see cref="T:Terminus.Connector"/> is attached.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ConnectorInfo.otherConnectorName">
+            <summary>
+            <see cref="F:Terminus.Connector.connectorName"/> of connector that this <see cref="T:Terminus.Connector"/> is attached.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ConnectorInfo.sideway">
+            <summary>
+            If attachment is <see cref="F:Terminus.AttachmentInfo.Types.sideway"/> or not.
+            </summary>
+        </member>
+        <member name="T:Terminus.SerializableAssembly.ParameterInfo">
+            <summary>
+            Struct containing information about serialized parameter of component belonging to part(<see cref="T:Terminus.TerminusObject"/>).
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ParameterInfo.component">
+            <summary>
+            Class name of component
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ParameterInfo.parameter">
+            <summary>
+            Field or property name.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ParameterInfo.type">
+            <summary>
+            Type name of <see cref="F:Terminus.SerializableAssembly.ParameterInfo.parameter"/> 
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ParameterInfo.value">
+            <summary>
+            Serialized value of component. Either string or base64 representation.
+            </summary>
+        </member>
+        <member name="F:Terminus.SerializableAssembly.ParameterInfo.binary">
+            <summary>
+            If true, <see cref="F:Terminus.SerializableAssembly.ParameterInfo.value"/> contains base64 representation, otherwise it contains simple string representation.
+            </summary>
+        </member>
+        <member name="M:Terminus.SerializableAssembly.ReadFromObject(Terminus.TerminusObject)">
+            <summary>
+            Fills <see cref="F:Terminus.SerializableAssembly.objects"/> by reading provided <see cref="T:Terminus.TerminusObject"/> and its <see cref="P:Terminus.TerminusObject.treeListDown"/> 
+            </summary>
+            <param name="TerminusObject">Root Terminus object of construction.</param>
+        </member>
+        <member name="M:Terminus.SerializableAssembly.Spawn(UnityEngine.Vector3,Terminus.TerminusObject.Modes,System.Boolean)">
+            <summary>
+            Spawns saved construction at given position.
+            </summary>
+            <param name="position">Position of root <see cref="T:Terminus.TerminusObject"/>  of spawned construction.</param>
+            <param name="mode">Mode to put root <see cref="T:Terminus.TerminusObject"/> after spawning.</param>
+            <param name="inAssemblyState"><see cref="P:Terminus.TerminusObject.inAssemblyState"/> of root <see cref="T:Terminus.TerminusObject"/> after spawning.</param>
+        </member>
+        <member name="M:Terminus.SerializableAssembly.SaveToXML(System.String)">
+            <summary>
+            Serializes current saved <see cref="F:Terminus.SerializableAssembly.objects"/> to XML file.
+            </summary>
+            <remarks>
+            Rewrites file if already existing.
+            </remarks>
+            <param name="path">Path for creating/replacing.</param>
+            <seealso cref="M:Terminus.SerializableAssembly.LoadFromXML(System.String)"/>
+        </member>
+        <member name="M:Terminus.SerializableAssembly.LoadFromXML(System.String)">
+            <summary>
+            Loads <see cref="F:Terminus.SerializableAssembly.objects"/> from XML file.
+            </summary>
+            <param name="path">Path.</param>
+            <seealso cref="M:Terminus.SerializableAssembly.SaveToXML(System.String)"/>
+        </member>
+        <member name="M:Terminus.SerializableAssembly.SaveToXML(System.String,Terminus.TerminusObject)">
+            <summary>
+            Static method for saving construction directly to XML file, bypassing SerializableAssembly instance creation.
+            </summary>
+            <remarks>
+            Still creates temporary SerializableAssembly internally.
+            </remarks>
+            <param name="path">Path to saved XML file.</param>
+            <param name="root">Root <see cref="T:Terminus.TerminusObject"/>.</param>
+        </member>
+        <member name="M:Terminus.SerializableAssembly.CreateFromXML(System.String)">
+            <summary>
+            Static method for creating <see cref="T:Terminus.SerializableAssembly"/> directly from XML file/
+            </summary>
+            <returns>
+            Created <see cref="T:Terminus.SerializableAssembly"/>
+            </returns>
+            <param name="path">Path to XML file.</param>
+        </member>
+        <member name="M:Terminus.SerializableAssembly.SpawnFromXML(System.String,UnityEngine.Vector3,Terminus.TerminusObject.Modes,System.Boolean)">
+            <summary>
+            Static method for loading construction directly from XML file, bypassing SerializableAssembly instance creation.
+            </summary>
+            <remarks>
+            Still creates temporary SerializableAssembly internally.
+            </remarks>
+            <returns>
+            Root <see cref="T:Terminus.TerminusObject"/> of spawned constuction.
+            </returns>
+            <param name="path">Path to XML file.</param>
+        </member>
+        <member name="T:Terminus.Settings">
+            <summary>
+            Class containing global Terminus settings.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.layers">
+            <summary>
+            Terminus layers. See <see cref="P:Terminus.Connector.layer"/>
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.prefabs">
+            <summary>
+            List of serializable prefabs used by <see cref="T:Terminus.SerializableAssembly"/>
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.fireMessagesInEditMode">
+            <summary>
+            If set to true, fires OnAttachment and OnDetachment messages even when in edit mode. Otherwise these messages fired only in play mode.
+            </summary>
+        </member>
+        <member name="T:Terminus.Settings.AssemblyPrefabOptions">
+            <summary>
+            Options for serializing different parts(<see cref="T:Terminus.TerminusObject"/>s).
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.AssemblyPrefabOptions.prefab">
+            <summary>
+            Prefab GameObject of <see cref="T:Terminus.TerminusObject"/> 
+            </summary>
+        </member>
+        <member name="T:Terminus.Settings.AssemblySerializableParameters">
+            <summary>
+            Rules for serializing different components by <see cref="T:Terminus.SerializableAssembly"/> 
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.AssemblySerializableParameters.component">
+            <summary>
+            Component class name.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.AssemblySerializableParameters.parameters">
+            <summary>
+            Names of parameters (fields and properties) to serialize. Can be public, private or protected.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.AssemblySerializableParameters.sendMessage">
+            <summary>
+            Should <see cref="T:Terminus.SerializableAssembly"/> send message to component on deserialization?
+            </summary>
+            <seealso cref="F:Terminus.Settings.AssemblySerializableParameters.messageMethod"/> 
+        </member>
+        <member name="F:Terminus.Settings.AssemblySerializableParameters.messageMethod">
+            <summary>
+            Method to call if /// <seealso cref="F:Terminus.Settings.AssemblySerializableParameters.sendMessage"/> is true.
+            </summary>
+            <seealso cref="F:Terminus.Settings.AssemblySerializableParameters.sendMessage"/> 
+        </member>
+        <member name="T:Terminus.Settings.LayerPortOptions">
+            <summary>
+            Terminus Layer options.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.name">
+            <summary>
+            Name of this layer. Mainly for UI purposes.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.inspectorColor">
+            <summary>
+            Color of connector gizmos shown in scene edit window of Unity editor. No effect on gameplay.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.acceptsConnectionFromLayers">
+            <summary>
+            <see cref="T:Terminus.Connector"/>s  from what layers can be attached to connectors from this layer.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.attachementPort">
+            <summary>
+            Can be <see cref="P:Terminus.TerminusObject.currentAttachmentPort"/>. Only one of <see cref="F:Terminus.TerminusObject.connectors"/> can be attachment port at the same time.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.cyclingAttachementPort">
+            <summary>
+            <see cref="T:Terminus.Port"/>s belonging to this layer can be made <see cref="P:Terminus.TerminusObject.currentAttachmentPort"/> by calling <see cref="M:Terminus.TerminusObject.SetNextAttachmentPort(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.connectionType">
+            <summary>
+            Type of action pefromed <see cref="T:Terminus.Connector"/> from this layer is attached to other connector.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.use2DPhysics">
+            <summary>
+            <see cref="T:Terminus.Connector"/> uses 2D physics and 2D calculations for proximity and angle differnces.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.jointPrefab">
+            <summary>
+            If <see cref="F:Terminus.Settings.LayerPortOptions.connectionType"/> is <see cref="F:Terminus.Settings.ConnectionTypes.physic_joints"/> or <see cref="F:Terminus.Settings.ConnectionTypes.combined"/>, clone of this Joint will be created on attachment.
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.use2DPhysics"/>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.jointPrefab2D">
+            <summary>
+            If <see cref="F:Terminus.Settings.LayerPortOptions.connectionType"/> is <see cref="F:Terminus.Settings.ConnectionTypes.physic_joints"/> or <see cref="F:Terminus.Settings.ConnectionTypes.combined"/>, clone of this Joint2D will be created on attachment.
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.use2DPhysics"/>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.snapRadius">
+            <summary>
+            At what minimum distance two <see cref="T:Terminus.Connector"/>s that can be attached according to <see cref="F:Terminus.Settings.LayerPortOptions.acceptsConnectionFromLayers"/> can be considered attachment candidates by <see cref="M:Terminus.Port.CheckPossibleConnections(UnityEngine.Component,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.snapConeAngle">
+            <summary>
+            At what orientation difference (in degrees) two <see cref="T:Terminus.Connector"/>s that can be attached according to <see cref="F:Terminus.Settings.LayerPortOptions.acceptsConnectionFromLayers"/> can be considered attachment candidates by <see cref="M:Terminus.Port.CheckPossibleConnections(UnityEngine.Component,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.onlyPlanarSnap">
+            <summary>
+            If true, <see cref="F:Terminus.Settings.LayerPortOptions.snapConeAngle"/> considers difference between Z-axes of <see cref="T:Terminus.Connector"/>s orientations only.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.sendMessagesToPorts">
+            <summary>
+            Should messages be sent to GameObjects containing <see cref="T:Terminus.Connector"/>s participating in attachment or detachment?
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onBeforeAttachmentMessage"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onAfterAttachmentMessage"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onBeforeDetachmentMessage"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onAfterDetachmentMessage"/> 
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.sendMessagesToOwnerObjects">
+            <summary>
+            Should messages be sent to GameObjects containing <see cref="P:Terminus.Connector.owner"/>s participating in attachment or detachment?
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onBeforeAttachmentMessage"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onAfterAttachmentMessage"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onBeforeDetachmentMessage"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onAfterDetachmentMessage"/> 
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.sendMessagesToGameObject">
+            <summary>
+            Should messages be sent to <see cref="F:Terminus.Manager.globalMessagesReciever"/> GameObject?
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onBeforeAttachmentMessage"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onAfterAttachmentMessage"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onBeforeDetachmentMessage"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onAfterDetachmentMessage"/> 
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.onBeforeAttachmentMessage">
+            <summary>
+            Method name for BeforeAttachment message. <see cref="T:Terminus.AttachmentInfo"/> will be provided as parameter.
+            </summary>
+            <remarks>
+            Note that if attachment is performed through physics joint, <see cref="F:Terminus.AttachmentInfo.joint"/> will unavaliable at the time of this message since its not created yet.
+            Use <see cref="F:Terminus.Settings.LayerPortOptions.onAfterAttachmentMessage"/> if you need access to physics joint.
+            </remarks>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onAfterAttachmentMessage"/> 
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.onAfterAttachmentMessage">
+            <summary>
+            Method name for AfterAttachment message. <see cref="T:Terminus.AttachmentInfo"/> will be provided as parameter.
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onBeforeAttachmentMessage"/> 
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.onBeforeDetachmentMessage">
+            <summary>
+            Method name for BeforeDetachment message. <see cref="T:Terminus.AttachmentInfo"/> will be provided as parameter.
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onAfterDetachmentMessage"/> 
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.onAfterDetachmentMessage">
+            <summary>
+            Method name for AfterDetachment message. <see cref="T:Terminus.AttachmentInfo"/> will be provided as parameter.
+            </summary>
+            <remarks>
+            Note that if attachment was performed through physics joint, <see cref="F:Terminus.AttachmentInfo.joint"/> will unavaliable at the time of this message since its already destroyed.
+            Use <see cref="F:Terminus.Settings.LayerPortOptions.onBeforeDetachmentMessage"/> if you need access to physics joint.
+            </remarks>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onBeforeDetachmentMessage"/> 
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.useInfluenceMessaging">
+            <summary>
+            Influence messaging fills <see cref="F:Terminus.TerminusObject.allInfluences"/> list and fires InfluenceEnter and InfluenceExit messages according to set influence zone.
+            </summary>
+            <remarks>
+            Influence zones DO NOT affect attachment behaviour, but <see cref="F:Terminus.Settings.LayerPortOptions.acceptsConnectionFromLayers"/> still affects possible influences.
+            </remarks>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.influenceRadius">
+            <summary>
+            Radius of influence zone. (see <see cref="F:Terminus.Settings.LayerPortOptions.useInfluenceMessaging"/> 
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.useInfluenceMessaging"/>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.influenceConeAngle">
+            <summary>
+            Maximum orientation difference (in degrees) between <see cref="T:Terminus.Connector"/>s to be considered as influencing each other. (see <see cref="F:Terminus.Settings.LayerPortOptions.useInfluenceMessaging"/> 
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.useInfluenceMessaging"/>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.influenceMessageEnter">
+            <summary>
+            Method name for influence zone enter message. <see cref="T:Terminus.ZoneInteraction"/> will be provided as parameter.
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.useInfluenceMessaging"/>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.influenceMessageExit">
+            <summary>
+            Method name for influence zone exit message. <see cref="T:Terminus.ZoneInteraction"/> will be provided as parameter.
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.useInfluenceMessaging"/>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.canRotate">
+            <summary>
+            <see cref="T:Terminus.Port"/> belonging to this layer can change its <see cref="P:Terminus.Port.rotationShift"/> 
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.rotationLimits">
+            <summary>
+            <see cref="P:Terminus.Port.rotationShift"/> will be clamped between X and Y of this vector.
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.canRotate"/>
+        </member>
+        <member name="F:Terminus.Settings.LayerPortOptions.rotationStep">
+            <summary>
+            <see cref="M:Terminus.Port.Rotate(System.Int32)"/> will use this value for rotation step.
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.canRotate"/>
+        </member>
+        <member name="T:Terminus.Settings.ConnectionTypes">
+            <summary>
+            Type of actions performed when two <see cref="T:Terminus.Connector"/>s are attached.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.ConnectionTypes.physic_joints">
+            <summary>
+            Connection will be performed via created physics joint. If <see cref="F:Terminus.Settings.LayerPortOptions.jointPrefab"/> or <see cref="F:Terminus.Settings.LayerPortOptions.jointPrefab2D"/> are not provided, default fixed joint will be created.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.ConnectionTypes.hierarchy">
+            <summary>
+            Connection will be performed via parenting <see cref="P:Terminus.Connector.owner"/> transfor that's being attached to owner transform of other <see cref="T:Terminus.Connector"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.ConnectionTypes.combined">
+            <summary>
+            Actions associated with both <see cref="F:Terminus.Settings.ConnectionTypes.physic_joints"/> and <see cref="F:Terminus.Settings.ConnectionTypes.hierarchy"/> types will be performed.
+            </summary>
+        </member>
+        <member name="F:Terminus.Settings.ConnectionTypes.empty">
+            <summary>
+            No connecting action will be performed on attachment. All other functionality including messaging and influence messaging will work. Use it to implement your own attachment mechanisms.
+            </summary>
+        </member>
+        <member name="M:Terminus.Settings.GetLayersNames">
+            <summary>
+            Returns array of all layer names in order.
+            </summary>
+        </member>
+        <member name="T:Terminus.Utils">
+            <summary>
+            Helper class containing useful static methods.
+            </summary>
+        </member>
+        <member name="M:Terminus.Utils.SendMessage(UnityEngine.GameObject,System.String,System.Object)">
+            <summary>
+            Same functionality as GameObject.SendMessage, but works without error in edit mode.
+            </summary>
+            <param name="reciever">Reciever GameObject.</param>
+            <param name="methodName">Method name.</param>
+            <param name="value">Method parameter.</param>
+        </member>
+        <member name="M:Terminus.Utils.SendMessageToComponent(UnityEngine.Component,System.String,System.Object)">
+            <summary>
+            Same functionality as GameObject.SendMessage, but works without error in edit mode and send message only to provided component.
+            </summary>
+            <param name="reciever">Reciever Component.</param>
+            <param name="methodName">Method name.</param>
+            <param name="value">Method parameter.</param>
+        </member>
+        <member name="M:Terminus.Utils.CopyJoint(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary>
+            Makes copy of provided Joint or Joint2D and attaches it to destination GameObject.
+            </summary>
+            <returns>Copy of the component.</returns>
+            <param name="original">Original component.</param>
+            <param name="destination">Destination GameObject.</param>
+        </member>
+        <member name="M:Terminus.Utils.XY(UnityEngine.Vector3)">
+            <summary>
+            Returns XY part of Vector3.
+            </summary>
+        </member>
+        <member name="M:Terminus.Utils.SetupMaterialWithBlendMode(UnityEngine.Material,Terminus.Utils.BlendMode)">
+            <summary>
+            Changes blendmove of material that uses Unity Standard shader.
+            </summary>
+        </member>
+        <member name="T:Terminus.ZoneInteraction">
+            <summary>
+            Information about interaction of two <see cref="T:Terminus.Connector"/>s.
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.useInfluenceMessaging"/>
+        </member>
+        <member name="F:Terminus.ZoneInteraction.sqrDistance">
+            <summary>
+            Square of distance between <see cref="T:Terminus.Connector"/>ss. Get Mathf.Sqrt of this to see real distance.
+            </summary>
+            <remarks>
+            Stored as a square for performance purposes.
+            </remarks>
+        </member>
+        <member name="T:Terminus.LongConnectionLRend">
+            <summary>
+            Helper component that handles special type of <see cref="T:Terminus.TerminusObject"/>s such as struts. Visualizes connection as <see href="http://docs.unity3d.com/ScriptReference/LineRenderer.html">LineRenderer</see>.
+            </summary>
+            <remarks>
+            This class requres <see href="http://docs.unity3d.com/ScriptReference/LineRenderer.html">LineRenderer</see> component to be present on the same GameObject.
+            Long connection TerminusObject is different in its placement procedure since it requres attaching 2 <see cref="F:Terminus.TerminusObject.connectors"/> instead of one.
+            It also modifies itself depending on positions of its connectors.
+            </remarks>
+            <seealso cref="T:Terminus.LongConnectionMesh"/>
+            <seealso cref="T:Terminus.LongConnection"/>
+        </member>
+        <member name="F:Terminus.LongConnectionLRend.tiling">
+            <summary>
+            Should this component change tiling of LineRenderer material?
+            </summary>
+            <seealso cref="F:Terminus.LongConnectionLRend.tilingLength"/>
+        </member>
+        <member name="F:Terminus.LongConnectionLRend.tilingLength">
+            <summary>
+            Length of texture tile in Unity worldspace units.
+            </summary>
+            <seealso cref="F:Terminus.LongConnectionLRend.tiling"/>
+        </member>
+        <member name="T:Terminus.LongConnectionMesh">
+            <summary>
+            Helper component that handles special type of <see cref="T:Terminus.TerminusObject"/>s such as struts. Visualizes connection with <see href="http://docs.unity3d.com/ScriptReference/MeshRenderer.html">MeshRenderer</see>.
+            </summary>
+            <remarks>
+            This class requres <see href="http://docs.unity3d.com/ScriptReference/MeshRenderer.html">MeshRenderer</see> and <see href="http://docs.unity3d.com/ScriptReference/MeshFilter.html">MeshFilter</see> components to be present on the same GameObject.
+            This <see cref="T:Terminus.LongConnection"/> type can change mass of parent <see cref="T:Terminus.TerminusObject"/> dynamically. It also can create collider for connection.
+            Long connection TerminusObject is different in its placement procedure since it requres attaching 2 <see cref="F:Terminus.TerminusObject.connectors"/> instead of one.
+            It also modifies itself depending on positions of its connectors.
+            </remarks>
+            <seealso cref="T:Terminus.LongConnectionLRend"/>
+            <seealso cref="T:Terminus.LongConnection"/>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.recalculateMass">
+            <summary>
+            Should mass of <see cref="T:Terminus.TerminusObject"/>s rigidbody be recalculated based on connection length?
+            </summary>
+            <seealso cref="F:Terminus.LongConnectionMesh.massPerLengthUnit"/>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.massPerLengthUnit">
+            <summary>
+            Mass of <see cref="T:Terminus.TerminusObject"/>s rigidbody per Unity worldspace length unit.
+            </summary>
+            <seealso cref="F:Terminus.LongConnectionMesh.recalculateMass"/>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.crossSection">
+            <summary>
+            2D cross-section for connection mesh generation.
+            </summary>
+            <seealso cref="F:Terminus.LongConnectionMesh.smoothNormals"/>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.smoothNormals">
+            <summary>
+            Should connection mesh normals be smoothed or not?
+            </summary>
+            /// <seealso cref="F:Terminus.LongConnectionMesh.crossSection"/>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.recalculateSensitivity">
+            <summary>
+            If relative positions of <see cref="T:Terminus.Connector"/>s belonging to owner <see cref="T:Terminus.TerminusObject"/> change more than this value and <see cref="F:Terminus.LongConnection.realtimeRecalculate"/> is true, mesh will be regenerated and all parameters will be recalculated.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.meshFilter">
+            <summary>
+            <see href="http://docs.unity3d.com/ScriptReference/MeshFilter.html">MeshFilter</see> for rendering connection mesh.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.meshRenderer">
+            <summary>
+            <see href="http://docs.unity3d.com/ScriptReference/MeshRenderer.html">MeshRenderer</see> for rendering connection mesh.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.material">
+            <summary>
+            Material that will be assigned to <see href="http://docs.unity3d.com/ScriptReference/MeshRenderer.html">MeshRenderer</see>.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.tiling">
+            <summary>
+            Should this component change tiling of <see cref="F:Terminus.LongConnectionMesh.material"/>?
+            </summary>
+            <seealso cref="F:Terminus.LongConnectionLRend.tilingLength"/>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.tilingLength">
+            <summary>
+            Length of texture tile in Unity worldspace units.
+            </summary>
+            <seealso cref="F:Terminus.LongConnectionMesh.tiling"/>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.colliderType">
+            <summary>
+            Type of connection collider used.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.boxCollider">
+            <summary>
+            Collider if <see cref="F:Terminus.LongConnectionMesh.colliderType"/> == <see cref="F:Terminus.LongConnectionMesh.ColliderTypes.box"/> and <see cref="F:Terminus.LongConnection.use2D"/> is false.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.boxSize">
+            <summary>
+            Size of cross-section of <see cref="F:Terminus.LongConnectionMesh.boxCollider"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.capsuleCollider">
+            <summary>
+            Collider if <see cref="F:Terminus.LongConnectionMesh.colliderType"/> == <see cref="F:Terminus.LongConnectionMesh.ColliderTypes.capsule"/> and <see cref="F:Terminus.LongConnection.use2D"/> is false.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.boxCollider2D">
+            <summary>
+            Collider if <see cref="F:Terminus.LongConnectionMesh.colliderType"/> == <see cref="F:Terminus.LongConnectionMesh.ColliderTypes.box"/> and <see cref="F:Terminus.LongConnection.use2D"/> is true.
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.colliderSize">
+            <summary>
+            Radius of <see cref="F:Terminus.LongConnectionMesh.capsuleCollider"/> or width of <see cref="F:Terminus.LongConnectionMesh.boxCollider2D"/>
+            </summary>
+        </member>
+        <member name="F:Terminus.LongConnectionMesh.colliderMargin">
+            <summary>
+            Margins of connection collider from <see cref="T:Terminus.Connector"/>s positions.
+            </summary>
+        </member>
+        <member name="T:Terminus.LongConnectionMesh.ColliderTypes">
+            <summary>
+            Types of possible connection colliders used by <see cref="T:Terminus.LongConnectionMesh"/>.
+            </summary>
+        </member>
+        <member name="T:Terminus.Manager">
+            <summary>
+             Class containing information about Terminus objects and connectors currently active on scene.
+             It also performs periodic updates to check what connectors can interact with each other.
+            </summary>
+        </member>
+        <member name="F:Terminus.Manager.updateEvent">
+            <summary>
+             What Unity event will be used to perform regular check for possible interactions between connectors.
+            </summary>
+        </member>
+        <member name="F:Terminus.Manager.globalMessagesReciever">
+            <summary>
+             If some of your connectors have global messaging enabled, this object will recieve messages from them.
+            </summary>
+        </member>
+        <member name="F:Terminus.Manager.globalTransform">
+            <summary>
+             <see cref="T:Terminus.TerminusObject"/> with no parent(or their containers) will be parented to this transform.
+            </summary>
+        </member>
+        <member name="P:Terminus.Manager.globalPlaymode">
+            <summary>
+             Toggle for entering and exiting global playmode. Global playmode tries to put all <see cref="T:Terminus.TerminusObject"/>s on scene to <see cref="P:Terminus.TerminusObject.inPlaymode"/>.
+             Setting it to true calls <see cref="!:Maganer.EnterGlobalPlaymode"/>, and setting it to false calls <see cref="M:Terminus.Manager.ExitGlobalPlaymode"/>.
+            </summary>
+             <seealso cref="M:Terminus.Manager.EnterGlobalPlaymode(System.Boolean)"/>
+             <seealso cref="M:Terminus.Manager.ExitGlobalPlaymode"/>
+             <seealso cref="P:Terminus.TerminusObject.inPlaymode"/>
+        </member>
+        <member name="P:Terminus.Manager.quitFlag">
+            <summary>
+             Set to true when application is quitting.
+            </summary>
+        </member>
+        <member name="P:Terminus.Manager.layers">
+            <summary>
+             Current layers. Loaded from global Terminus.Settings on play.
+            </summary>
+        </member>
+        <member name="P:Terminus.Manager.rootObjects">
+            <summary>
+             Returns all root <see cref="T:Terminus.TerminusObject"/>s (objects with no Terminus parent).
+            </summary>
+        </member>
+        <member name="P:Terminus.Manager.registeredObjects">
+            <summary>
+             Returns all <see cref="T:Terminus.TerminusObject"/>s on scene.
+            </summary>
+        </member>
+        <member name="P:Terminus.Manager.registeredConnectors">
+            <summary>
+             Returns all active <see cref="T:Terminus.Connector"/>s  on scene.
+            </summary>
+        </member>
+        <member name="P:Terminus.Manager.acceptingConnectors">
+            <summary>
+             Returns all <see cref="T:Terminus.Connector"/>s that are in "accepting connections" state.
+            </summary>
+        </member>
+        <member name="P:Terminus.Manager.activePorts">
+            <summary>
+             Returns all <see cref="T:Terminus.Port"/>s that are in "being attached" state. (<see cref="T:Terminus.Surface"/>s  can't be in that state).
+            </summary>
+        </member>
+        <member name="T:Terminus.Manager.UpdateEvent">
+            <summary>
+             Types of Unity events that can be used to to perform regular check for possible connections between connectors.
+            </summary>
+        </member>
+        <member name="P:Terminus.Manager.Instance">
+            <summary>
+             Singleton linking to currently active instance of Manager class.
+            </summary>
+        </member>
+        <member name="P:Terminus.Manager.staticGlobalTransform">
+            <summary>
+             <see cref="F:Terminus.Manager.globalTransform"/>  of current <see cref="P:Terminus.Manager.Instance"/> . Null if there's no active instance of Manager.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.RecreateHierarchy(System.Boolean)">
+            <summary>
+             Creates lists of current <see cref="T:Terminus.TerminusObject"/>s and <see cref="T:Terminus.Connector"/>s.
+            </summary>
+            <param name="forceRecreate"> If set to false, will only create lists if they are null.</param>
+        </member>
+        <member name="M:Terminus.Manager.UpdateSettings">
+            <summary>
+             Reads current layer settings from global <see cref="T:Terminus.Settings"/>  object.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.DeclareSingleton">
+            <summary>
+             Assigns static <see cref="P:Terminus.Manager.Instance"/>  to current object if it's currently null, or adds registered objects and connectors from this Manager instance to current static Instance.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.GetlayersPNames">
+            <summary>
+             Returns current layer names.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.SetContainer(Terminus.TerminusObject)">
+            <summary>
+             Gets cached <see cref="T:Terminus.Container"/>  or creates new and assigns it to <see cref="T:Terminus.TerminusObject"/>.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.FreeContainer(Terminus.Container)">
+            <summary>
+             Detaches <see cref="T:Terminus.Container"/> from its current <see cref="T:Terminus.TerminusObject"/> and puts it back into cache or deletes it depending on amount of containers avaliable in cache.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.EnterGlobalPlaymode(System.Boolean)">
+            <summary>
+             Enters global playmode. Identical to setting <see cref="P:Terminus.Manager.globalPlaymode"/> to true.
+            </summary>
+             <remarks>
+             Enters all root <see cref="!:TerminusObjects"/> into <see cref="P:Terminus.TerminusObject.inPlaymode">playmode</see> with preservation of sideway attachment between them.
+             If you manually set every root <see cref="T:Terminus.TerminusObject"/> to <see cref="P:Terminus.TerminusObject.inPlaymode">playmode</see>, sideways attachment between them will still be connected to originals and not playmode clones.
+             All <see cref="!:TerminusObjects"/> instantiated during global playmode will be designated as clones and destroyed upon exiting playmode. Call <see cref="M:Terminus.TerminusObject.DeclarePlaymodeNonClone"/> to preserve it.
+             </remarks>
+        </member>
+        <member name="M:Terminus.Manager.ExitGlobalPlaymode">
+            <summary>
+             Exits global playmode. Identical to setting <see cref="P:Terminus.Manager.globalPlaymode"/> to false.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.RegisterConnector(Terminus.Connector)">
+            <summary>
+             Registers <see cref="T:Terminus.Connector"/> or updates its state. Should be called if connector settings that affect its interaction with other connectors have been changed (called automatically by <see cref="T:Terminus.Port"/> and <see cref="T:Terminus.Surface"/> classes).
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.UnregisterConnector(Terminus.Connector)">
+            <summary>
+             Deletes <see cref="T:Terminus.Connector"/> from list of current connectors. Called automatically on connector destruction.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.RegisterObject(Terminus.TerminusObject)">
+            <summary>
+             Registers freshly-created <see cref="T:Terminus.TerminusObject"/>. Called automatically.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.UnregisterObject(Terminus.TerminusObject)">
+            <summary>
+             Unregister destroyed <see cref="T:Terminus.TerminusObject"/>. Called automatically.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.UpdateCheckData">
+            <summary>
+             Checks for destroyed <see cref="T:Terminus.TerminusObject"/>s and <see cref="T:Terminus.Connector"/>s and removes them from current lists, and updates lists of possible interactable connectors for all connectors.
+            </summary>
+             <remarks>
+             Also cleans up <see cref="F:Terminus.TerminusObject.allInfluences"/>.
+             </remarks>
+        </member>
+        <member name="M:Terminus.Manager.UpdateCheckDataForPort(Terminus.Port)">
+            <summary>
+             Updates lists of possible interactable <see cref="T:Terminus.Connector"/>ss for provided connector.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.CheckPossibleConnections">
+            <summary>
+             Searches all <see cref="T:Terminus.Connector"/>ss for valid interactions with other connectors.
+            </summary>
+        </member>
+        <member name="M:Terminus.Manager.SendMessageToReciever(System.String,System.Object)">
+            <summary>
+             Sends message to <see cref="F:Terminus.Manager.globalMessagesReciever"/>.
+            </summary>
+            <param name="methodName"> Method to call on <see cref="F:Terminus.Manager.globalMessagesReciever"/>.</param>
+            <param name="value"> Parameter to provide to the method.</param>
+        </member>
+        <member name="T:Terminus.Port">
+            <summary>
+            Oriented point <see cref="T:Terminus.Connector"/>. Only connector that can both be attached and recieve attachments. Supports only one attachment at the same time.
+            <seealso cref="T:Terminus.Connector"/>
+            <seealso cref="T:Terminus.Surface"/>
+            </summary>
+        </member>
+        <member name="F:Terminus.Port.doNotMoveOwner">
+            <summary>
+            If true, changing port position will not move <see cref="P:Terminus.Connector.owner"/>. Main use is when owner is <see cref="T:Terminus.LongConnection"/>-type object (for example, strut).
+            </summary>
+        </member>
+        <member name="F:Terminus.Port.drawGizmos">
+            <summary>
+            Draw port gizmo in editor. No effect outside editor.
+            </summary>
+        </member>
+        <member name="F:Terminus.Port.drawControls">
+            <summary>
+            Draw controls for port <see cref="P:Terminus.Port.rotation"/> and <see cref="P:Terminus.Port.offset"/>. No effect outside editor.
+            </summary>
+        </member>
+        <member name="F:Terminus.Port.influences">
+            <summary>
+            List of influences from other ports currently affecting this port. Read-only unless you know exactly what you're doing.
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.attachmentInfo">
+            <summary>
+            Information about current attachment.
+            </summary>
+            <example>
+            Example of accessing attachment of port.
+            <code>
+            {
+            	public Terminus.Port port;	
+            
+            	void MakeSurfaceJointBreakable()
+            	{
+            		//Checks if port is attached to something
+            		if (port.attachmentInfo.attachmentType != AttachmentInfo.Types.none)
+            		{
+            			//Checks if other connector is surface
+            			if (port.attachmentInfo.otherConnector is typeof(Terminus.Surface))
+            			{
+            				//Access attachment joint
+            				((Joint)port.attachmentInfo.joint).breakForce = 1000;
+            			}
+            		}
+            	}
+            }
+            </code>
+            </example>
+        </member>
+        <member name="F:Terminus.Port.connectorsToCheck">
+            <summary>
+            Connectors that this port can possibly be attached to. Filled by <see cref="T:Terminus.Manager"/>.
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.attachmentCandidate">
+            <summary>
+            Most recently detected connector that accept attachment from this port with regards to <see cref="T:Terminus.Settings.LayerPortOptions"/> (layer compatiblity, proximity and rotation difference).
+            Read-only, filled by <see cref="M:Terminus.Port.CheckPossibleConnections(UnityEngine.Component,System.Boolean)"/>  or by <see cref="F:Terminus.Manager.updateEvent"/> 
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.attachmentCandidatePosition">
+            <summary>
+            Position of <see cref="P:Terminus.Port.attachmentCandidate"/> when <see cref="M:Terminus.Port.CheckPossibleConnections(UnityEngine.Component,System.Boolean)"/> was called.
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.attachmentCandidateRotation">
+            <summary>
+            Rotation of <see cref="P:Terminus.Port.attachmentCandidate"/> when <see cref="M:Terminus.Port.CheckPossibleConnections(UnityEngine.Component,System.Boolean)"/> was called.
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.isCurrentAttachmentPort">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Terminus.Port"/> is current attachment port of owner <see cref="T:Terminus.TerminusObject"/>. TerminusObject can only have one attachment port at the same time.
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.offset">
+            <summary>
+            Local position of this port.
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.rotationShift">
+            <summary>
+            Rotation difference from default <see cref="P:Terminus.Port.rotation"/>. Final local port rotation calculated as rotationShift * <see cref="P:Terminus.Port.rotation"/> 
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.rotation">
+            <summary>
+            Local rotation of the port. If you want to rotate port during runtime, do not change this value.
+            Use <see cref="M:Terminus.Port.Rotate(System.Int32)"/> , <see cref="M:Terminus.Port.RotateByAngle(System.Single)"/> and <see cref="P:Terminus.Port.rotationShift"/> 
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.isAttachable">
+            <summary>
+            Returns true if port can be attached to other <see cref="T:Terminus.Connector"/> . Other connector should be <see cref="P:Terminus.Connector.isAccepting"/>.
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.isOccupied">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Terminus.Port"/> is already attached to something.
+            </summary>
+            <value><c>true</c> if is occupied; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Terminus.Port.globalRotation">
+            <summary>
+            Returns <see cref="P:Terminus.Port.rotation"/> translated to global space.
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.globalPosition">
+            <summary>
+            Returns <see cref="P:Terminus.Port.offset"/> translated to global space.
+            </summary>
+        </member>
+        <member name="P:Terminus.Port.attachmentsInfo">
+            <summary>
+            Returns empty list when port isn't attached to anything, and list with one element containing <see cref="P:Terminus.Port.attachmentInfo"/> otherwise.
+            </summary>
+        </member>
+        <member name="M:Terminus.Port.Rotate(System.Int32)">
+            <summary>
+            Rotates <see cref="P:Terminus.Port.rotationShift"/> by <see cref="F:Terminus.Settings.LayerPortOptions.rotationStep"/> if <see cref="F:Terminus.Settings.LayerPortOptions.canRotate"/> set to true.
+            </summary>
+            <param name="steps">rotationStep will be multiplied by that number. Can be negative for rotation in opposite direction.</param>
+        </member>
+        <member name="M:Terminus.Port.RotateByAngle(System.Single)">
+            <summary>
+            Rotates <see cref="P:Terminus.Port.rotationShift"/> by specific angle if <see cref="F:Terminus.Settings.LayerPortOptions.canRotate"/> set to true.
+            </summary>
+            <param name="angle">Angle (in degrees).</param>
+        </member>
+        <member name="M:Terminus.Port.Align(UnityEngine.Vector3,UnityEngine.Quaternion)">
+            <summary>
+            Moves transform of this port (and its <see cref="P:Terminus.Connector.owner"/>) so that its <see cref="P:Terminus.Port.globalPosition"/> and <see cref="P:Terminus.Port.globalRotation"/> are aligned with provided parameters.
+            </summary>
+            <example>
+            Example of aligning one port to another.
+            <code>
+            public Terminus.Port port1;
+            public Terminus.Port port2;
+            
+            public void AlignPorts()
+            {
+            	port1.Align(port2.globalPosition,port2.globalRotation);
+            }
+            </code>
+            </example>
+            <param name="position">Desired position of port.</param>
+            <param name="orientation">Desired orientation of port. Note that port will look in opposite direction from this.</param>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.onlyPlanarSnap"/>
+            <seealso cref="F:Terminus.Port.doNotMoveOwner"/>
+        </member>
+        <member name="M:Terminus.Port.GetAttachmentInfo(Terminus.Connector)">
+            <summary>
+            Returns <see cref="P:Terminus.Port.attachmentInfo"/> if <see cref="F:Terminus.AttachmentInfo.otherConnector"/> is provided <see cref="T:Terminus.Connector"/> .
+            </summary>
+            <param name="connector">Connector to check for.</param>
+        </member>
+        <member name="M:Terminus.Port.CleanUpInfluenceInfo">
+            <summary>
+            Usually called by <see cref="T:Terminus.Manager"/> automatically. Removes influence links to ports that's no longer can affect this <see cref="T:Terminus.Port"/>.
+            </summary>
+        </member>
+        <member name="M:Terminus.Port.CheckPossibleConnections(UnityEngine.Component,System.Boolean)">
+            <summary>
+            Checks for possible <see cref="T:Terminus.Connector"/>s that this connector can be attached to. Fills <see cref="P:Terminus.Port.attachmentCandidate"/> field with closest candidate if several were found.
+            </summary>
+            <remarks>
+            Note that only way to consider <see cref="T:Terminus.Surface"/>s as attachment candidates is to provide Collider. If you're using raycasting for placing your objects, provide collider that was hit with raycast. Alternative method is to use collisions for determination of suitable collider.
+            </remarks>
+            <returns><c>true</c>, if at least one possible candidate was found, <c>false</c> otherwise.</returns>
+            <param name="placementCollider">Collider to check for possible <see cref="T:Terminus.Surface"/> attachments. Provided by <see cref="T:Terminus.Placer"/> and <see cref="T:Terminus.RaycastHandler"/> classes if you use them.</param>
+            <param name="autoconnect">If set to <c>true</c>, will <see cref="M:Terminus.Port.Connect(Terminus.Connector)"/>  port to closest candidate depending on <see cref="F:Terminus.TerminusObject.attachAutomatically"/> .</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Terminus.Port.ClosestAvaliableConnector(System.Single,System.Single,System.Boolean,System.Boolean)" -->
+        <member name="M:Terminus.Port.Connect(Terminus.Connector)">
+            <summary>
+            Calls either <see cref="M:Terminus.Port.Align(UnityEngine.Vector3,UnityEngine.Quaternion)"/> or both Align and <see cref="M:Terminus.Port.AttachTo(Terminus.Connector)"/> to provided <see cref="T:Terminus.Connector"/> depending on <see cref="F:Terminus.TerminusObject.attachAutomatically"/>.
+            </summary>
+            <param name="connector">Opposite connector.</param>
+        </member>
+        <member name="M:Terminus.Port.AttachTo(Terminus.Connector)">
+            <summary>
+            Creates attachment to provided <see cref="T:Terminus.Connector"/> or to <see cref="P:Terminus.Port.attachmentCandidate"/> if none was provided.
+            </summary>
+            <remarks>
+            Exact actions performed by attachment is dependent on <see cref="T:Terminus.Settings.LayerPortOptions"/> of this port.
+            Only consisnent action AttachTo performs is to declare this port as child to provided connector.
+            In general, this action calls OnBeforeAttachment and OnAfterAttachment events, parent transforms of owners <see cref="T:Terminus.TerminusObject"/>s, and/or creates physics joints.
+            </remarks>
+            <returns><c>true</c>, if port was attached succesfully, <c>false</c> otherwise (if port was already <see cref="P:Terminus.Port.isOccupied"/> .</returns>
+            <param name="connector">Connector to attach this port to. Leave null to attach this port to <see cref="P:Terminus.Port.attachmentCandidate"/> </param>
+        </member>
+        <member name="M:Terminus.Port.AttachToSideways(Terminus.Connector)">
+            <summary>
+            Similar to <see cref="M:Terminus.Port.AttachTo(Terminus.Connector)"/>, but creates sideway attachment.
+            </summary>
+            <remarks>
+            Sideway attachment function identical as normal attachment, but do not affect Terminus hierarchy (noone is declared child or parent). It also can't affect transform hierarchy.
+            </remarks>
+            <returns><c>true</c>, if to sideways was attached, <c>false</c> otherwise.</returns>
+            <param name="connector">Connector.</param>
+        </member>
+        <member name="M:Terminus.Port.Detach(System.Boolean)">
+            <summary>
+            Destroys current attachment and reverts all actions done by attaching. Called automatically if joint breaks.
+            </summary>
+            <remarks>
+            Also can call OnBeforeDetachment and OnAfterDetachment events.
+            </remarks>
+            <param name="doNotTouchHierarchy">If set to <c>true</c>, transform hierarchy will not be reverted.</param>
+        </member>
+        <member name="M:Terminus.Port.GetClosestRigidbody">
+            <summary>
+            Gets the closest rigidbody in transform hierarchy by looking up the transform tree.
+            </summary>
+        </member>
+        <member name="M:Terminus.Port.GetClosestRigidbody2D">
+            <summary>
+            Gets the closest rigidbody2D in transform hierarchy by looking up the transform tree.
+            </summary>
+        </member>
+        <member name="M:Terminus.Port.AchievableSymmetryCount(System.Int32)">
+            <summary>
+            Calculates closest number of possible symmetric <see cref="T:Terminus.Port"/>s based on provided desired number. 
+            </summary>
+            <returns>The symmetry count.</returns>
+            <param name="desiredCount">Desired count.</param>
+            <seealso cref="F:Terminus.TerminusObject.symmetryGroups"/>
+        </member>
+        <member name="M:Terminus.Port.GetSymmetryPositions(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Component)">
+            <summary>
+            Gets positions of symmetric <see cref="T:Terminus.Port"/>s for attaching multiple <see cref="T:Terminus.TerminusObject"/>s symmetrically.
+            </summary>
+            <param name="positionCount">Position count. Use <see cref="M:Terminus.Port.AchievableSymmetryCount(System.Int32)"/> to prevent over-drafting symmetry count.</param>
+            <param name="originalPosition">Global position of port that tries to attach to this port.</param>
+            <param name="originalRotation">Global rotation of port that tries to attach to this port.</param>
+            <param name="collider">Collider provided by raycasting placement of part. Can be null, do not affect anything in case of port symmetry.</param>
+        </member>
+        <member name="T:Terminus.StandardAttachmentHandler">
+            <summary>
+            <see cref="T:Terminus.AttachmentHandler"/> that manages components belonging to <see cref="T:Terminus.TerminusObject"/> when it's being placed by <see cref="T:Terminus.Placer"/> or similar process.
+            </summary>
+            <remarks>
+            Does 3 things:
+            1) Changes main color and blendmode(if applicable) of materials of <see cref="!:StandardAttachmentHandler.affectedRenderers"/>.
+            2) Changes layers of colliders.
+            3) Changes isKinematic property of rigidbodies.
+            </remarks>
+            <seealso cref="T:Terminus.IntersectChecker"/>
+        </member>
+        <member name="F:Terminus.StandardAttachmentHandler.validColor">
+            <summary>
+            Main color of of materials of <see cref="!:StandardAttachmentHandler.affectedRenderers"/> when owner <see cref="T:Terminus.TerminusObject"/> are placed in valid position
+            </summary>
+            <remarks>
+            Valid position means accepting <see cref="T:Terminus.Connector"/> have been found and <see cref="!:StandardAttachmentHandler.affectedColliders"/> or <see cref="!:StandardAttachmentHandler.affectedColliders2D"/> aren't intersecting with other colliders.
+            </remarks>
+        </member>
+        <member name="F:Terminus.StandardAttachmentHandler.invalidColor">
+            <summary>
+            Main color of of materials of <see cref="!:StandardAttachmentHandler.affectedRenderers"/> when owner <see cref="T:Terminus.TerminusObject"/> are placed in invalid position.
+            </summary>
+            <remarks>
+            Invalind position means accepting <see cref="T:Terminus.Connector"/> have not been found.
+            </remarks>
+        </member>
+        <member name="F:Terminus.StandardAttachmentHandler.collidingColor">
+            <summary>
+            Main color of of materials of <see cref="!:StandardAttachmentHandler.affectedRenderers"/> when owner <see cref="T:Terminus.TerminusObject"/> are placed in colliding position.
+            </summary>
+            <remarks>
+            Colliding position means accepting <see cref="T:Terminus.Connector"/> have been found but <see cref="!:StandardAttachmentHandler.affectedColliders"/> or <see cref="!:StandardAttachmentHandler.affectedColliders2D"/> are intersecting with other colliders.
+            </remarks>
+        </member>
+        <member name="T:Terminus.StandardStateHandler">
+            <summary>
+            Handles changing <see cref="F:Terminus.StateHandler.affectedRigidbodies"/> and <see cref="F:Terminus.StateHandler.affectedRigidbodies2D"/> isKinematic properties when <see cref="P:Terminus.TerminusObject.inAssemblyState"/> is changed.
+            </summary>
+            <seealso cref="T:Terminus.StateHandler"/> 
+        </member>
+        <member name="T:Terminus.Surface">
+            <summary>
+            Surface <see cref="T:Terminus.Connector"/>. Can accept multiple attachments but can not be attached itself. Surfaces are defined by colliders they contain.
+            </summary>
+        </member>
+        <member name="F:Terminus.Surface.colliders">
+            <summary>
+            List of colliders that define shape of <see cref="T:Terminus.Surface"/> .
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.use2DPhysics"/>
+        </member>
+        <member name="F:Terminus.Surface.colliders2D">
+            <summary>
+            List of 2D colliders that define shape of <see cref="T:Terminus.Surface"/>.
+            </summary>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.use2DPhysics"/>
+        </member>
+        <member name="F:Terminus.Surface.symmetryType">
+            <summary>
+            Type of symmetry that is used by this surface. Used for symmetrical attachment of multiple <see cref="T:Terminus.TerminusObject"/>s at the same time.
+            </summary>
+            <seealso cref="M:Terminus.Connector.AchievableSymmetryCount(System.Int32)"/>
+            <seealso cref="M:Terminus.Connector.GetSymmetryPositions(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Component)"/>
+        </member>
+        <member name="F:Terminus.Surface.symmetryPoint">
+            <summary>
+            Center of symmetry if <see cref="F:Terminus.Surface.symmetryType"/> isn't <see cref="F:Terminus.Surface.SymmetryTypes.none"/> .
+            </summary>
+        </member>
+        <member name="F:Terminus.Surface.symmetryVector">
+            <summary>
+            Direction of symmetry line if <see cref="F:Terminus.Surface.symmetryType"/>  is <see cref="F:Terminus.Surface.SymmetryTypes.linear"/> .
+            </summary>
+        </member>
+        <member name="F:Terminus.Surface.symmetryRotation">
+            <summary>
+            Rotation of normal of symmetry plane if <see cref="F:Terminus.Surface.symmetryType"/>  is <see cref="F:Terminus.Surface.SymmetryTypes.planar"/> .
+            </summary>
+        </member>
+        <member name="F:Terminus.Surface.maxAttachedPorts">
+            <summary>
+            Limit of <see cref="T:Terminus.Port"/>s that can be attached to this <see cref="T:Terminus.Surface"/>.
+            </summary>
+        </member>
+        <member name="P:Terminus.Surface.maxSymmetryObjects">
+            <summary>
+            Maximum simultaneous symmetry attachment points that can be generated by this surface.
+            </summary>
+        </member>
+        <member name="T:Terminus.Surface.SymmetryTypes">
+            <summary>
+            Types of symmetry that can be achieved by <see cref="T:Terminus.Surface"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.Surface.SymmetryTypes.none">
+            <summary>
+            <see cref="T:Terminus.Surface"/> isn't symmetrical
+            </summary>
+        </member>
+        <member name="F:Terminus.Surface.SymmetryTypes.point">
+            <summary>
+            <see cref="T:Terminus.Surface"/> have spherical symmetry around <see cref="F:Terminus.Surface.symmetryPoint"/> 
+            </summary>
+        </member>
+        <member name="F:Terminus.Surface.SymmetryTypes.linear">
+            <summary>
+            <see cref="T:Terminus.Surface"/> have linear symmetry with line going through <see cref="F:Terminus.Surface.symmetryPoint"/> in direction of <see cref="F:Terminus.Surface.symmetryVector"/> 
+            </summary>
+        </member>
+        <member name="F:Terminus.Surface.SymmetryTypes.planar">
+            <summary>
+            <see cref="T:Terminus.Surface"/> have planar symmetry with plane intersecting <see cref="F:Terminus.Surface.symmetryPoint"/> and with normal oriented by <see cref="F:Terminus.Surface.symmetryRotation"/> 
+            </summary>
+        </member>
+        <member name="T:Terminus.TerminusObject">
+            <summary>
+            Main component of Terminus system. It combines several <see cref="T:Terminus.Connector"/>s with transforms, rigidbodies and helper components such as <see cref="T:Terminus.StateHandler"/>, <see cref="T:Terminus.LongConnection"/> and <see cref="T:Terminus.AttachmentHandler"/>. Each building block in your assembly should have one(and only one) TerminusObject component.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.doNotAutoUpdate">
+            <summary>
+            Excludes this <see cref="T:Terminus.TerminusObject"/> from <see cref="F:Terminus.Manager.updateEvent"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.mainRigidbody">
+            <summary>
+            Rigidbody that determines position of <see cref="T:Terminus.TerminusObject"/>. Should be used when TerminusObject attached to transform that aren't indicative of its real position.
+            </summary>
+            <seealso cref="F:Terminus.TerminusObject.mainRigidbody2D"/>
+        </member>
+        <member name="F:Terminus.TerminusObject.mainRigidbody2D">
+            <summary>
+            Rigidbody2D that determines position of <see cref="T:Terminus.TerminusObject"/>. Should be used when TerminusObject attached to transform that aren't indicative of its real position.
+            </summary>
+            <seealso cref="F:Terminus.TerminusObject.mainRigidbody"/>
+        </member>
+        <member name="F:Terminus.TerminusObject.playmodeClone">
+            <summary>
+            When this object is <see cref="P:Terminus.TerminusObject.inPlaymode"/>, this field contains its playmode clone.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.playmodeOriginal">
+            <summary>
+            If this object <see cref="P:Terminus.TerminusObject.isPlaymodeClone"/>, this field contains its original.
+            </summary>
+        </member>
+        <member name="P:Terminus.TerminusObject.inPlaymode">
+            <summary>
+            Enters and exits playmode. See remarks for details.
+            </summary>
+            <remarks>
+            When <see cref="T:Terminus.TerminusObject"/> enters playmode, following things happen:
+            1) GameObject of <see cref="T:Terminus.TerminusObject"/> is disabled.
+            2) Terminus creates clone of this <see cref="T:Terminus.TerminusObject"/> that is designated as its <see cref="F:Terminus.TerminusObject.playmodeClone"/> 
+            3) <see cref="P:Terminus.TerminusObject.inAssemblyState"/> of <see cref="F:Terminus.TerminusObject.playmodeClone"/> set to false.
+            
+            Exiting playmode destroys <see cref="F:Terminus.TerminusObject.playmodeClone"/> and reverts all changes to <see cref="T:Terminus.TerminusObject"/>.
+            </remarks>
+            <seealso cref="P:Terminus.Manager.globalPlaymode"/> 
+        </member>
+        <member name="P:Terminus.TerminusObject.isPlaymodeClone">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Terminus.TerminusObject"/> is playmode clone. Can set only from true to false
+            </summary>
+            <remarks>
+            If set to false on playmode clone, calls <see cref="M:Terminus.TerminusObject.DeclarePlaymodeNonClone"/>
+            </remarks>
+            <see cref="P:Terminus.TerminusObject.inPlaymode"/> 
+        </member>
+        <member name="P:Terminus.TerminusObject.getPartName">
+            <summary>
+            Unique name of assembly part associated with this <see cref="T:Terminus.TerminusObject"/>. Used by <see cref="T:Terminus.SerializableAssembly"/> for assembling serialized constructions.
+            </summary>
+            <remarks>
+            Gets protected assemblyPartName variable that be set only on prefab from editor (or by using reflections).
+            </remarks>
+        </member>
+        <member name="P:Terminus.TerminusObject.destroyFlag">
+            <summary>
+            Set to true when this object is being destroyed.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.connectors">
+            <summary>
+            List of <see cref="T:Terminus.Connector"/>s of this <see cref="T:Terminus.TerminusObject"/>. <see cref="P:Terminus.Connector.owner"/> of each connector in this list should be set to this TerminusObject.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.attachAutomatically">
+            <summary>
+            Should this <see cref="T:Terminus.TerminusObject"/> be attached when <see cref="M:Terminus.Port.Connect(Terminus.Connector)"/> is called.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.drawGizmos">
+            <summary>
+            Draw gizmos of all connectors in the editor. No effect outside editor.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.awaitingAttachmentTo">
+            <summary>
+            Closest candidate for attachment. Filled when <see cref="M:Terminus.Port.ClosestAvaliableConnector(System.Single,System.Single,System.Boolean,System.Boolean)"/> on one of <see cref="T:Terminus.Port"/>s of this <see cref="T:Terminus.TerminusObject"/> is called.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.longConnection">
+            <summary>
+            Set to true if this object is <see cref="T:Terminus.LongConnection"/>-type (e.g., strut).
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.doNotConnectSideways">
+            <summary>
+            Forbid this <see cref="T:Terminus.TerminusObject"/> to participate in <see cref="F:Terminus.AttachmentInfo.Types.sideway"/>  attachments.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.createContainerWhenRoot">
+            <summary>
+            If set to true, <see cref="T:Terminus.Container"/> GameObject will be created when this <see cref="T:Terminus.TerminusObject"/> is root (not child of any other TerminusObject).
+            </summary>
+            <seealso cref="F:Terminus.TerminusObject.container"/>
+        </member>
+        <member name="F:Terminus.TerminusObject.container">
+            <summary>
+            <see cref="T:Terminus.Container"/> object created if <see cref="F:Terminus.TerminusObject.createContainerWhenRoot"/> set to true.
+            </summary>
+            <seealso cref="F:Terminus.TerminusObject.createContainerWhenRoot"/>
+        </member>
+        <member name="F:Terminus.TerminusObject.useSymmetryGroups">
+            <summary>
+            Use groups of <see cref="T:Terminus.Connector"/>s as one of the method of generating attachment points when trying to symmetrically attach several <see cref="T:Terminus.TerminusObject"/>s.
+            </summary>
+            <remarks>
+            Mainly used to provide symmetry for objects with no surfaces.
+            For example, cube with 6 ports can have 3 2-way groups, 3 4-way groups and 1 6-way group of symmetry.
+            </remarks>
+            <seealso cref="F:Terminus.TerminusObject.symmetryGroups"/> 
+        </member>
+        <member name="F:Terminus.TerminusObject.symmetryGroups">
+            <summary>
+            See <see cref="F:Terminus.TerminusObject.useSymmetryGroups"/> 
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.symmetricSiblings">
+            <summary>
+            Sibling <see cref="T:Terminus.TerminusObject"/>s that were attached using symmetry mechanism.
+            </summary>
+        </member>
+        <member name="T:Terminus.TerminusObject.SymmetricGroup">
+            <summary>
+            Information about group of <see cref="T:Terminus.TerminusObject"/> siblings that are in the same symmetric group.
+            </summary>
+            <seealso cref="F:Terminus.TerminusObject.symmetricSiblings"/>
+        </member>
+        <member name="F:Terminus.TerminusObject.SymmetricGroup.connectors">
+            <summary>
+            Symmetric connectors of <see cref="T:Terminus.TerminusObject"/>s  inside this symmetric group.
+            </summary>
+        </member>
+        <member name="P:Terminus.TerminusObject.realPosition">
+            <summary>
+            Position of this <see cref="T:Terminus.TerminusObject"/> with regards to <see cref="F:Terminus.TerminusObject.mainRigidbody"/> and <see cref="F:Terminus.TerminusObject.mainRigidbody2D"/>.
+            </summary>
+            <remarks>
+            returns transform.position if <see cref="F:Terminus.TerminusObject.mainRigidbody"/> and <see cref="F:Terminus.TerminusObject.mainRigidbody2D"/> are null.
+            </remarks>
+            <seealso cref="F:Terminus.TerminusObject.mainRigidbody"/>
+            <seealso cref="F:Terminus.TerminusObject.mainRigidbody2D"/>
+        </member>
+        <member name="P:Terminus.TerminusObject.realRotation">
+            <summary>
+            Rotation of this <see cref="T:Terminus.TerminusObject"/> with regards to <see cref="F:Terminus.TerminusObject.mainRigidbody"/> and <see cref="F:Terminus.TerminusObject.mainRigidbody2D"/>.
+            </summary>
+            <remarks>
+            returns transform.rotation if <see cref="F:Terminus.TerminusObject.mainRigidbody"/> and <see cref="F:Terminus.TerminusObject.mainRigidbody2D"/> are null.
+            </remarks>
+            <seealso cref="F:Terminus.TerminusObject.mainRigidbody"/>
+            <seealso cref="F:Terminus.TerminusObject.mainRigidbody2D"/>
+        </member>
+        <member name="P:Terminus.TerminusObject.position">
+            <summary>
+            Manipulates position of this <see cref="T:Terminus.TerminusObject"/> and all its <see cref="P:Terminus.TerminusObject.treeListDown"/> children with regards to its <see cref="F:Terminus.TerminusObject.container"/> 
+            </summary>
+        </member>
+        <member name="P:Terminus.TerminusObject.rotation">
+            <summary>
+            Manipulates rotation of this <see cref="T:Terminus.TerminusObject"/> and all its <see cref="P:Terminus.TerminusObject.treeListDown"/> children with regards to its <see cref="F:Terminus.TerminusObject.container"/> 
+            </summary>
+        </member>
+        <member name="P:Terminus.TerminusObject.containerOrSelf">
+            <summary>
+            Returns <see cref="F:Terminus.TerminusObject.container"/> gameobject if it's not null, <see cref="T:Terminus.TerminusObject"/> gameObject otherwise.
+            </summary>
+        </member>
+        <member name="P:Terminus.TerminusObject.treeRoot">
+            <summary>
+            Returns most senior <see cref="T:Terminus.TerminusObject"/> of hierarchy tree this object is part of. (Terminus hierarchy is separate from Unity transform hierarchy).
+            </summary>
+        </member>
+        <member name="P:Terminus.TerminusObject.parent">
+            <summary>
+            Returns <see cref="T:Terminus.AttachmentInfo"/> of attachment to <see cref="F:Terminus.AttachmentInfo.Types.parent"/>  of this <see cref="T:Terminus.TerminusObject"/>. (Terminus hierarchy is separate from Unity transform hierarchy).
+            </summary>
+            <remarks>
+            Get <see cref="F:Terminus.AttachmentInfo.otherConnector"/>.owner to get parent <see cref="T:Terminus.TerminusObject"/>.
+            </remarks>
+            <see cref="P:Terminus.TerminusObject.treeRoot"/> 
+            <see cref="P:Terminus.TerminusObject.treeListUp"/> 
+        </member>
+        <member name="P:Terminus.TerminusObject.children">
+            <summary>
+            Returns <see cref="T:Terminus.AttachmentInfo"/>s of attachments to <see cref="F:Terminus.AttachmentInfo.Types.child"/>ren of this <see cref="T:Terminus.TerminusObject"/>. (Terminus hierarchy is separate from Unity transform hierarchy).
+            </summary>
+            <remarks>
+            Get <see cref="F:Terminus.AttachmentInfo.otherConnector"/>.owner to get children <see cref="T:Terminus.TerminusObject"/>s.
+            </remarks>
+            <see cref="P:Terminus.TerminusObject.treeListDown"/> 
+        </member>
+        <member name="P:Terminus.TerminusObject.sidewaysConnections">
+            <summary>
+            Returns <see cref="T:Terminus.AttachmentInfo"/>s of <see cref="F:Terminus.AttachmentInfo.Types.sideway"/> attachments of this <see cref="T:Terminus.TerminusObject"/>.
+            </summary>
+            <remarks>
+            Get <see cref="F:Terminus.AttachmentInfo.otherConnector"/>.owner to get sideway-attached <see cref="T:Terminus.TerminusObject"/>s.
+            </remarks>
+        </member>
+        <member name="P:Terminus.TerminusObject.treeListUp">
+            <summary>
+            Returns <see cref="T:Terminus.AttachmentInfo"/>s of all attachments that are up-tree from this <see cref="T:Terminus.TerminusObject"/>. (Terminus hierarchy is separate from Unity transform hierarchy).
+            </summary>
+            <remarks>
+            Get <see cref="F:Terminus.AttachmentInfo.otherConnector"/>.owner to get <see cref="T:Terminus.TerminusObject"/>s.
+            </remarks>
+        </member>
+        <member name="P:Terminus.TerminusObject.treeListDown">
+            <summary>
+            Returns <see cref="T:Terminus.AttachmentInfo"/>s of all attachments that are down-tree from this <see cref="T:Terminus.TerminusObject"/>. (Terminus hierarchy is separate from Unity transform hierarchy).
+            </summary>
+            <remarks>
+            Get <see cref="F:Terminus.AttachmentInfo.otherConnector"/>.owner to get <see cref="T:Terminus.TerminusObject"/>s.
+            </remarks>
+        </member>
+        <member name="P:Terminus.TerminusObject.allAttachedObjects">
+            <summary>
+            Returns all <see cref="T:Terminus.TerminusObject"/>s attached to this TerminusObject.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.allInfluences">
+            <summary>
+            All interactions with other connectors according to <see cref="F:Terminus.Settings.LayerPortOptions.useInfluenceMessaging"/>.
+            </summary>
+        </member>
+        <member name="P:Terminus.TerminusObject.closestInfluence">
+            <summary>
+            Closest interaction with other connectors according to <see cref="F:Terminus.Settings.LayerPortOptions.useInfluenceMessaging"/>.
+            </summary>
+        </member>
+        <member name="P:Terminus.TerminusObject.mode">
+            <summary>
+            Mode of this object. Chanding this re-initializes all <see cref="F:Terminus.TerminusObject.connectors"/> of this <see cref="T:Terminus.TerminusObject"/>.
+            </summary>
+        </member>
+        <member name="P:Terminus.TerminusObject.currentAttachmentPort">
+            <summary>
+            Current <see cref="T:Terminus.Port"/> that is used by <see cref="T:Terminus.Placer"/> class to try to attach this <see cref="T:Terminus.TerminusObject"/>.
+            </summary>
+            <remarks>
+            Setting <see cref="P:Terminus.Port.isCurrentAttachmentPort"/> changes this field and vice-versa.
+            </remarks>
+        </member>
+        <member name="P:Terminus.TerminusObject.inAssemblyState">
+            <summary>
+            Controls associated <see cref="T:Terminus.StateHandler"/>. <see cref="T:Terminus.StandardStateHandler"/> switches isKinematic property of <see cref="F:Terminus.StateHandler.affectedRigidbodies"/> and <see cref="F:Terminus.StateHandler.affectedRigidbodies2D"/> according to this value.
+            </summary>
+        </member>
+        <member name="T:Terminus.TerminusObject.Modes">
+            <summary>
+            Mode of TerminusObject determinig behaviour of its <see cref="F:Terminus.TerminusObject.connectors"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.Modes.accepting_attachments">
+            <summary>
+            <see cref="F:Terminus.TerminusObject.connectors"/> of this <see cref="T:Terminus.TerminusObject"/> can only accept attachments.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.Modes.being_attached">
+            <summary>
+            <see cref="F:Terminus.TerminusObject.connectors"/> of this <see cref="T:Terminus.TerminusObject"/> can only be attached to <see cref="T:Terminus.Connector"/>s that can accept attachments .
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.Modes.free_connections">
+            <summary>
+            <see cref="F:Terminus.TerminusObject.connectors"/> of this <see cref="T:Terminus.TerminusObject"/> can both accept attachments and be attached.
+            </summary>
+        </member>
+        <member name="F:Terminus.TerminusObject.Modes.inactive">
+            <summary>
+            <see cref="F:Terminus.TerminusObject.connectors"/> of this <see cref="T:Terminus.TerminusObject"/> can neither accept attachment nor be attached.
+            </summary>
+        </member>
+        <member name="M:Terminus.TerminusObject.EnterPlaymode(System.Boolean)">
+            <summary>
+            Enters the playmode (see <see cref="P:Terminus.TerminusObject.inPlaymode"/>. Use <see cref="P:Terminus.Manager.globalPlaymode"/> if you want to correctly handle sideway attachments between different vehicles (object trees).
+            </summary>
+            <returns>Created <see cref="F:Terminus.TerminusObject.playmodeClone"/></returns>
+            <param name="changeAssemblyState">If set to <c>false</c>, does not change assembly state of created clone.</param>
+            <seealso cref="P:Terminus.TerminusObject.inPlaymode"/>
+        </member>
+        <member name="M:Terminus.TerminusObject.DeclarePlaymodeNonClone">
+            <summary>
+            Works only if this <see cref="T:Terminus.TerminusObject"/> <see cref="P:Terminus.TerminusObject.isPlaymodeClone"/>. Declares it non-clone so it persists after playmode ends.
+            </summary>
+            <seealso cref="P:Terminus.TerminusObject.inPlaymode"/>
+        </member>
+        <member name="M:Terminus.TerminusObject.ExitPlaymode">
+            <summary>
+            Exits the playmode (see <see cref="P:Terminus.TerminusObject.inPlaymode"/>. Can be called on either clone or original. Always returns original.
+            </summary>
+            <returns><see cref="F:Terminus.TerminusObject.playmodeOriginal"/></returns>
+            <seealso cref="P:Terminus.TerminusObject.inPlaymode"/>
+        </member>
+        <member name="M:Terminus.TerminusObject.CleanUpConnectors">
+            <summary>
+            Removes null refernces from <see cref="F:Terminus.TerminusObject.connectors"/> 
+            </summary>
+        </member>
+        <member name="M:Terminus.TerminusObject.ClearInfluences">
+            <summary>
+            Removes null refernces from <see cref="F:Terminus.TerminusObject.allInfluences"/> 
+            </summary>
+        </member>
+        <member name="M:Terminus.TerminusObject.Move(UnityEngine.Vector3,UnityEngine.Quaternion)">
+            <summary>
+            Move <see cref="T:Terminus.TerminusObject"/> to specified position with regards to <see cref="F:Terminus.TerminusObject.container"/> 
+            </summary>
+            <param name="position">New worldspace position.</param>
+            <param name="rotation">New worldspace rotation.</param>
+        </member>
+        <member name="M:Terminus.TerminusObject.SetNextAttachmentPort(System.Int32)">
+            <summary>
+            Cycles through possible ports that can be <see cref="P:Terminus.TerminusObject.currentAttachmentPort"/> 
+            </summary>
+            <returns><c>true</c>, if next attachment port was set, <c>false</c> otherwise.</returns>
+            <param name="step">Amount of indexes to skip through.</param>
+        </member>
+        <member name="M:Terminus.TerminusObject.DetachFromParent(System.Boolean)">
+            <summary>
+            Detachs this <see cref="T:Terminus.TerminusObject"/> from its <see cref="P:Terminus.TerminusObject.parent"/>.
+            </summary>
+            <param name="destroyLongConnections">If set to <c>true</c>, <see cref="T:Terminus.LongConnection"/>-type <see cref="T:Terminus.TerminusObject"/>s leading outisde <see cref="P:Terminus.TerminusObject.treeListDown"/> will be destroyed.</param>
+        </member>
+        <member name="M:Terminus.TerminusObject.DetachOfType(Terminus.AttachmentInfo.Types)">
+            <summary>
+            <see cref="M:Terminus.Port.Detach(System.Boolean)"/>es  all attachments of designated <see cref="T:Terminus.AttachmentInfo.Types"/>.
+            </summary>
+            <param name="type">Type of attachment to detach</param>
+        </member>
+        <member name="M:Terminus.TerminusObject.AttachSidewaysOnAllPorts(System.Single,System.Single)">
+            <summary>
+            Searches through all unoccupied <see cref="T:Terminus.Port"/>s inside <see cref="F:Terminus.TerminusObject.connectors"/> for possible sideway connections. Used to automatically connect to suitable connectors for structural integrity of resulting construction.
+            </summary>
+            <param name="distanceLimit">Distance limit for searching opposing ports.</param>
+            <param name="angleLimit">Angle limit for searching opposing ports.</param>
+        </member>
+        <member name="M:Terminus.TerminusObject.RegisterConnector(Terminus.Connector)">
+            <summary>
+            Registers the connector with this <see cref="T:Terminus.TerminusObject"/>.
+            </summary>
+        </member>
+        <member name="M:Terminus.TerminusObject.RemoveSymmetrySiblings">
+            <summary>
+            Removes symmetric siblings connections from this <see cref="T:Terminus.TerminusObject"/> and all <see cref="P:Terminus.TerminusObject.treeListDown"/> TerminusObjects.
+            </summary>
+            <remarks>
+            Also removes this his <see cref="T:Terminus.TerminusObject"/> and all <see cref="P:Terminus.TerminusObject.treeListDown"/> TerminusObjects from symmetric siblings lists of its symmetric siblings.
+            </remarks>
+        </member>
+        <member name="M:Terminus.TerminusObject.GetSupposedComponentState(UnityEngine.Component)">
+            <summary>
+            Gets original state of provided component. Used by <see cref="T:Terminus.StateHandler"/> and <see cref="T:Terminus.AttachmentHandler"/> 
+            </summary>
+        </member>
+        <member name="M:Terminus.TerminusObject.OnAttached">
+            <summary>
+            Calls <see cref="M:Terminus.AttachmentHandler.OnAttached"/> if recipient is not null.
+            </summary>
+        </member>
+        <member name="M:Terminus.TerminusObject.OnAttachmentStart">
+            <summary>
+            Calls <see cref="M:Terminus.AttachmentHandler.OnAttachmentStart"/> if recipient is not null.
+            </summary>
+        </member>
+        <member name="M:Terminus.TerminusObject.ValidPlacementUpdate">
+            <summary>
+            Calls <see cref="M:Terminus.AttachmentHandler.ValidPlacementUpdate"/> if recipient is not null.
+            </summary>
+        </member>
+        <member name="M:Terminus.TerminusObject.InvalidPlacementUpdate">
+            <summary>
+            Calls <see cref="M:Terminus.AttachmentHandler.InvalidPlacementUpdate"/> if recipient is not null.
+            </summary>
+        </member>
+        <member name="M:Terminus.TerminusObject.SaveOriginalComponentState">
+            <summary>
+            Saves states of all components referenced by <see cref="T:Terminus.StateHandler"/> and <see cref="T:Terminus.AttachmentHandler"/> 
+            </summary>
+        </member>
+        <member name="T:Terminus.Container">
+            <summary>
+            Component that's placed on <see cref="F:Terminus.TerminusObject.container"/> gameObject.
+            </summary>
+            <remarks>
+            Containers mainly used to place all interconnected <see cref="F:Terminus.Container.TerminusObject"/>s under one transform in Unity hierarchy when these TerminusObjects are attached only via physics joints.
+            This allows manipulation of position and rotation of these TerminusObjects as a whole on transform level without involving physics engine.
+            </remarks>
+        </member>
+        <member name="F:Terminus.Container.TerminusObject">
+            <summary>
+            Roor <see cref="F:Terminus.Container.TerminusObject"/> this container were generated for.
+            </summary>
+        </member>
+        <member name="F:Terminus.Container.DestroyFlag">
+            <summary>
+            Set to true when container is being destroyed.
+            </summary>
+        </member>
+        <member name="T:Terminus.EffectsManager">
+            <summary>
+            Manages creating effects on attachment and detachment of <see cref="T:Terminus.Connector"/>s.
+            </summary>
+            <remarks>
+            Can be placed on GameObject containing <see cref="T:Terminus.TerminusObject"/>, <see cref="T:Terminus.Connector"/> or <see cref="F:Terminus.Manager.globalMessagesReciever"/>.
+            This component is an example of using Terminus messaging.
+            </remarks>
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.sendMessagesToPorts"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.sendMessagesToOwnerObjects"/> 
+            <seealso cref="F:Terminus.Settings.LayerPortOptions.sendMessagesToGameObject"/> 
+        </member>
+        <member name="F:Terminus.EffectsManager.attachmentEffect">
+            <summary>
+            GameObject to instantiate on attachment.
+            </summary>
+        </member>
+        <member name="F:Terminus.EffectsManager.attachmentEffectTimer">
+            <summary>
+            Destroy instantiated <see cref="F:Terminus.EffectsManager.attachmentEffect"/> after this amount of time (in seconds).
+            </summary>
+        </member>
+        <member name="F:Terminus.EffectsManager.sidewayAttachmentEffect">
+            <summary>
+            GameObject to instantiate on sideway attachment.
+            </summary>
+        </member>
+        <member name="F:Terminus.EffectsManager.sidewayAttachmentEffectTimer">
+            <summary>
+            Destroy instantiated <see cref="F:Terminus.EffectsManager.sidewayAttachmentEffect"/> after this amount of time (in seconds).
+            </summary>
+        </member>
+        <member name="F:Terminus.EffectsManager.detachmentEffect">
+            <summary>
+            GameObject to instantiate on detachment.
+            </summary>
+        </member>
+        <member name="F:Terminus.EffectsManager.detachmentEffectTimer">
+            <summary>
+            Destroy instantiated <see cref="F:Terminus.EffectsManager.detachmentEffect"/> after this amount of time (in seconds).
+            </summary>
+        </member>
+        <member name="T:Terminus.IntersectChecker">
+            <summary>
+            Helper component placed by <see cref="T:Terminus.StandardAttachmentHandler"/> to detect when <see cref="F:Terminus.AttachmentHandler.affectedColliders"/> intersect with other colliders.
+            </summary>
+        </member>
+        <member name="M:Terminus.IntersectChecker.Intersects">
+            <summary>
+            Returns true if colliders intersect with other colliders.
+            </summary>
+        </member>
+        <member name="T:Terminus.Placer">
+            <summary>
+            Component for managing placement of <see cref="T:Terminus.TerminusObject"/>s. Needs <see cref="T:Terminus.RaycastHandler"/> or other positioning system.
+            </summary>
+            <remarks>
+            Works in conjunction with <see cref="T:Terminus.RaycastHandler"/> to create <see href="http://www.besiege.spiderlinggames.co.uk/">Besiege</see> or <see href="https://kerbalspaceprogram.com">Kerbal Space Program</see>-like construction process.
+            </remarks>
+        </member>
+        <member name="F:Terminus.Placer.sendMessageTo">
+            <summary>
+            Sends "TerminusPlacerObjectCleared" and "TerminusPlacerObjectUpdated" messages to these GameObjects.
+            </summary>
+            <seealso cref="M:Terminus.Placer.SendMessageToRecievers(Terminus.TerminusObject,System.Boolean)"/>
+        </member>
+        <member name="F:Terminus.Placer.sidewaysConnections">
+            <summary>
+            Should <see cref="M:Terminus.TerminusObject.AttachSidewaysOnAllPorts(System.Single,System.Single)"/> be called when attaching <see cref="P:Terminus.Placer.activeObject"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.Placer.sidewaysConnectionDistanceLimit">
+            <summary>
+            The sideways connections distance limit. See <see cref="F:Terminus.Placer.sidewaysConnections"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.Placer.sidewaysConnectionAngleLimit">
+            <summary>
+            The sideways connections angle difference (in degrees) limit. See <see cref="F:Terminus.Placer.sidewaysConnections"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.Placer.symmetryAttachmentsCount">
+            <summary>
+            Current desired symmetry count. Creates this number of clones of <see cref="P:Terminus.Placer.activeObject"/> and tries to attach them symmetrically.
+            </summary>
+        </member>
+        <member name="F:Terminus.Placer.whenEmptyBehaviour">
+            <summary>
+            What to do when <see cref="P:Terminus.Placer.activeObject"/> is empty and <see cref="M:Terminus.Placer.ExecuteEmptyBehaviour(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.GameObject,UnityEngine.Component)"/> is called.
+            </summary>
+        </member>
+        <member name="F:Terminus.Placer.excludeFromSelection">
+            <summary>
+            Exclude these <see cref="T:Terminus.TerminusObject"/>s from <see cref="F:Terminus.Placer.EmptyBehaviours.select"/>.
+            </summary>
+            <seealso cref="F:Terminus.Placer.whenEmptyBehaviour"/>
+            <seealso cref="M:Terminus.Placer.ExecuteEmptyBehaviour(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.GameObject,UnityEngine.Component)"/>
+        </member>
+        <member name="F:Terminus.Placer.excludeFromPickup">
+            <summary>
+            Exclude these <see cref="T:Terminus.TerminusObject"/>s from <see cref="F:Terminus.Placer.EmptyBehaviours.pickup"/>.
+            </summary>
+            <seealso cref="F:Terminus.Placer.whenEmptyBehaviour"/>
+            <seealso cref="M:Terminus.Placer.ExecuteEmptyBehaviour(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.GameObject,UnityEngine.Component)"/>
+        </member>
+        <member name="F:Terminus.Placer.excludeFromDestruction">
+            <summary>
+            Exclude these <see cref="T:Terminus.TerminusObject"/>s from <see cref="F:Terminus.Placer.EmptyBehaviours.destroy"/>.
+            </summary>
+            <seealso cref="F:Terminus.Placer.whenEmptyBehaviour"/>
+            <seealso cref="M:Terminus.Placer.ExecuteEmptyBehaviour(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.GameObject,UnityEngine.Component)"/>
+        </member>
+        <member name="F:Terminus.Placer.affectSymmetrySiblings">
+            <summary>
+            Affect symmetry siblings with <see cref="M:Terminus.Placer.ExecuteEmptyBehaviour(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.GameObject,UnityEngine.Component)"/>.
+            </summary>
+        </member>
+        <member name="P:Terminus.Placer.activeObject">
+            <summary>
+            Object that <see cref="T:Terminus.Placer"/> currently tries attaching.
+            </summary>
+        </member>
+        <member name="P:Terminus.Placer.oldActiveObject">
+            <summary>
+            Previous <see cref="P:Terminus.Placer.activeObject"/>
+            </summary>
+        </member>
+        <member name="T:Terminus.Placer.EmptyBehaviours">
+            <summary>
+            Possible actions to perform when <see cref="M:Terminus.Placer.ExecuteEmptyBehaviour(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.GameObject,UnityEngine.Component)"/> is called.
+            </summary>
+            <seealso cref="F:Terminus.Placer.whenEmptyBehaviour"/>
+            <seealso cref="M:Terminus.Placer.ExecuteEmptyBehaviour(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.GameObject,UnityEngine.Component)"/>
+        </member>
+        <member name="F:Terminus.Placer.EmptyBehaviours.do_nothing">
+            <summary>
+            Does nothing.
+            </summary>
+        </member>
+        <member name="F:Terminus.Placer.EmptyBehaviours.select">
+            <summary>
+            Calls <see cref="M:Terminus.Placer.SendMessageToRecievers(Terminus.TerminusObject,System.Boolean)"/>, and nothing else.
+            </summary>
+        </member>
+        <member name="F:Terminus.Placer.EmptyBehaviours.pickup">
+            <summary>
+            Calls <see cref="M:Terminus.TerminusObject.DetachFromParent(System.Boolean)"/> and sets it as <see cref="P:Terminus.Placer.activeObject"/>.
+            </summary>
+        </member>
+        <member name="F:Terminus.Placer.EmptyBehaviours.destroy">
+            <summary>
+            Destroys provided <see cref="T:Terminus.TerminusObject"/> 
+            </summary>
+        </member>
+        <member name="M:Terminus.Placer.CleanUp">
+            <summary>
+            Destroys leftover symmetry clones and activeObject(if not null).
+            </summary>
+        </member>
+        <member name="M:Terminus.Placer.CyclePortOnActiveObject(System.Int32)">
+            <summary>
+            Calls <see cref="M:Terminus.TerminusObject.SetNextAttachmentPort(System.Int32)"/> on <see cref="P:Terminus.Placer.activeObject"/>.
+            </summary>
+        </member>
+        <member name="M:Terminus.Placer.RotatePortOnActiveObject(System.Int32)">
+            <summary>
+            Calls <see cref="M:Terminus.Port.Rotate(System.Int32)"/> on <see cref="P:Terminus.TerminusObject.currentAttachmentPort"/> on <see cref="P:Terminus.Placer.activeObject"/>.
+            </summary>
+        </member>
+        <member name="M:Terminus.Placer.ExecutePlacingUpdate(System.Boolean,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.GameObject,UnityEngine.Component)">
+            <summary>
+            Tries to attach <see cref="P:Terminus.Placer.activeObject"/> according to provided parameters.
+            </summary>
+            <param name="attachingUpdate">True to try to attach <see cref="P:Terminus.Placer.activeObject"/>, false to just reposition it</param>
+            <param name="position">Supposed position of <see cref="P:Terminus.Placer.activeObject"/></param>
+            <param name="normal">Supposed normal (orientation) of <see cref="P:Terminus.Placer.activeObject"/></param>
+            <param name="clickedObject">Clicked object provided by <see cref="T:Terminus.RaycastHandler"/> </param>
+            <param name="collider">Collider provided by <see cref="T:Terminus.RaycastHandler"/></param>
+        </member>
+        <member name="M:Terminus.Placer.SendMessageToRecievers(Terminus.TerminusObject,System.Boolean)">
+            <summary>
+            Sends "TerminusPlacerObjectUpdated", "TerminusPlacerObjectUpdatedNull" or "TerminusPlacerObjectDeleted" messages to GameObjects contained in <see cref="F:Terminus.Placer.sendMessageTo"/> 
+            </summary>
+            <param name="selectedObject"><see cref="P:Terminus.Placer.activeObject"/> if called from <see cref="M:Terminus.Placer.ExecutePlacingUpdate(System.Boolean,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.GameObject,UnityEngine.Component)"/>. Any <see cref="T:Terminus.TerminusObject"/> if called otherwise.</param>
+            <param name="deleted">true if selectedObject was deleted, false otherwise</param>
+        </member>
+        <member name="M:Terminus.Placer.Pickup(Terminus.TerminusObject)">
+            <summary>
+            Calls <see cref="M:Terminus.TerminusObject.DetachFromParent(System.Boolean)"/> and sets it as <see cref="P:Terminus.Placer.activeObject"/>.
+            </summary>
+            <param name="obj">Object to pickup</param>
+        </member>
+        <member name="M:Terminus.Placer.ExecuteEmptyBehaviour(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.GameObject,UnityEngine.Component)">
+            <summary>
+            Executes actions associated with <seealso cref="F:Terminus.Placer.whenEmptyBehaviour"/>
+            </summary>
+            <param name="position">Position provided by <see cref="T:Terminus.RaycastHandler"/> or other similar process.</param>
+            <param name="normal">Normal (orientation) oprovided by <see cref="T:Terminus.RaycastHandler"/> or other similar process</param>
+            <param name="clickedObject">Clicked object provided by <see cref="T:Terminus.RaycastHandler"/> or other similar process</param>
+            <param name="collider">Collider provided by <see cref="T:Terminus.RaycastHandler"/> or other similar process</param>
+        </member>
+        <member name="T:Terminus.RaycastHandler">
+            <summary>
+            Component for providing user input data to <see cref="T:Terminus.Placer"/>.
+            </summary>
+            /// <remarks>
+            Works in conjunction with <see cref="T:Terminus.Placer"/> to create <see href="http://www.besiege.spiderlinggames.co.uk/">Besiege</see> or <see href="https://kerbalspaceprogram.com">Kerbal Space Program</see>-like construction process.
+            Raycasting is done from main camera position.
+            </remarks>
+        </member>
+        <member name="F:Terminus.RaycastHandler.attachRaycastLayers">
+            <summary>
+            Unity Layers to raycast for possible attachment points.
+            </summary>
+        </member>
+        <member name="F:Terminus.RaycastHandler.distance">
+            <summary>
+            Raycasting distance to raycast for possible attachment points.
+            </summary>
+        </member>
+    </members>
+</doc>

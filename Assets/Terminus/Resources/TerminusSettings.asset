@@ -1,0 +1,452 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00acec8ffa61b514499b7014c9835204, type: 3}
+  m_Name: TerminusSettings
+  m_EditorClassIdentifier: 
+  layers:
+  - name: Default
+    inspectorColor: {r: 1, g: 0, b: 0, a: 0.509}
+    acceptsConnectionFromLayers: -125
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 3
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 0.2
+    snapConeAngle: 0
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 1
+    sendMessagesToGameObject: 1
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 1
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  - name: Joints only
+    inspectorColor: {r: 1, g: 0.33, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: -125
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 0
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 0.2
+    snapConeAngle: 0
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 1
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 1
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  - name: Environment
+    inspectorColor: {r: 1, g: 0.66, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: 32
+    attachementPort: 0
+    cyclingAttachementPort: 0
+    attachmentPriority: 0
+    attachmentType: 3
+    destroyRigidbodyImmediately: 1
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 0.2
+    snapConeAngle: 0
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 1
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 0
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  - name: 2D_Default
+    inspectorColor: {r: 0.034482718, g: 1, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: 8
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 3
+    destroyRigidbodyImmediately: 0
+    use2DPhysics: 1
+    orientationType: 1
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 0.05
+    snapConeAngle: 10
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 1
+    sendMessagesToGameObject: 1
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 1
+    influenceRadius: 2
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 0
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  - name: Buildings_floors
+    inspectorColor: {r: 0, g: 0.64847857, b: 0.6764706, a: 0.5}
+    acceptsConnectionFromLayers: 16
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 1
+    attachmentType: 3
+    destroyRigidbodyImmediately: 1
+    use2DPhysics: 0
+    orientationType: 1
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 85
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 1
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 2
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  - name: Buildings_foundation
+    inspectorColor: {r: 0, g: 0.33793116, b: 1, a: 0.5}
+    acceptsConnectionFromLayers: 0
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 0
+    destroyRigidbodyImmediately: 1
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 180
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 1
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 2
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  - name: Buildings_walls_vertical
+    inspectorColor: {r: 0.58387417, g: 0.83823526, b: 0, a: 0.5}
+    acceptsConnectionFromLayers: 64
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 3
+    destroyRigidbodyImmediately: 1
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 0
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 1
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 2
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  - name: Buildings_walls_horizontal
+    inspectorColor: {r: 0.10272491, g: 0.5588235, b: 0.16248962, a: 0.5}
+    acceptsConnectionFromLayers: 128
+    attachementPort: 1
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 3
+    destroyRigidbodyImmediately: 1
+    use2DPhysics: 0
+    orientationType: 1
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 0
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 1
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 2
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  - name: Building_walls_vertical_acceptors
+    inspectorColor: {r: 0, g: 0.83921576, b: 0.040513936, a: 0.5}
+    acceptsConnectionFromLayers: 64
+    attachementPort: 0
+    cyclingAttachementPort: 1
+    attachmentPriority: 0
+    attachmentType: 3
+    destroyRigidbodyImmediately: 1
+    use2DPhysics: 0
+    orientationType: 0
+    jointPrefab: {fileID: 0}
+    jointPrefab2D: {fileID: 0}
+    snapRadius: 1
+    snapConeAngle: 0
+    sendMessagesToPorts: 0
+    sendMessagesToOwnerObjects: 0
+    sendMessagesToGameObject: 0
+    onBeforeAttachmentMessage: OnBeforeAttachment
+    onAfterAttachmentMessage: OnAfterAttachment
+    onBeforeDetachmentMessage: OnBeforeDetachment
+    onAfterDetachmentMessage: OnAfterDetachment
+    useInfluenceMessaging: 0
+    influenceRadius: 0
+    influenceConeAngle: 0
+    influenceMessageEnter: ZoneEnter
+    influenceMessageExit: ZoneExit
+    rotationType: 0
+    rotationLimits: {x: 0, y: 0}
+    rotationStep: 90
+  prefabs:
+  - prefab: {fileID: 11455432, guid: 4ff9d875a0fe32e4382396ea94a01dfb, type: 2}
+    parameters: []
+  - prefab: {fileID: 11494276, guid: 83b5f35b482c6fe46bb70bee97cf541e, type: 2}
+    parameters:
+    - component: ControllableMotor
+      parameters:
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      callOnDeserialization: 0
+  - prefab: {fileID: 11493980, guid: 587949e4d78630a4f8e8b7bc3a989add, type: 2}
+    parameters: []
+  - prefab: {fileID: 11432900, guid: 1c88c76d42796c6478931dd4d1677034, type: 2}
+    parameters:
+    - component: ControllableElasticString
+      parameters:
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      callOnDeserialization: 0
+  - prefab: {fileID: 11470712, guid: 09b1445b2b2901f4c89fc0747bddd215, type: 2}
+    parameters: []
+  - prefab: {fileID: 11479306, guid: ac7ae7922a142c242a6dd02a134278c5, type: 2}
+    parameters: []
+  - prefab: {fileID: 11469096, guid: 133c26a267f529247bb551790bceb493, type: 2}
+    parameters:
+    - component: ControllableMotor
+      parameters:
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      callOnDeserialization: 0
+    - component: ControllableHinge
+      parameters:
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      callOnDeserialization: 0
+  - prefab: {fileID: 11445512, guid: 909d62dcc6d725644948ad72a7252032, type: 2}
+    parameters:
+    - component: ControllableJetEngine
+      parameters:
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      callOnDeserialization: 0
+  - prefab: {fileID: 11486128, guid: 636f06f4763482642a1c06d7d06c858a, type: 2}
+    parameters:
+    - component: ControllableCannon
+      parameters:
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      callOnDeserialization: 0
+  - prefab: {fileID: 11475258, guid: ac67575777abb2f4aae0d2c7a82fc41c, type: 2}
+    parameters:
+    - component: ControllableCannon
+      parameters:
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      - parameterName: 
+        serializable: 0
+        uiEditable: 0
+        labelName: 
+        controlType: 0
+        minMax: {x: 0, y: 0}
+      callOnDeserialization: 0
+  - prefab: {fileID: 11474148, guid: c19535eb86393a544b314b99e273829a, type: 2}
+    parameters: []
+  - prefab: {fileID: 11477256, guid: 9a215d78d93b2ca41bb807d5ce86d6bc, type: 2}
+    parameters: []
+  - prefab: {fileID: 11462252, guid: 2759517023d57c641ab60a36bdec338a, type: 2}
+    parameters: []
+  - prefab: {fileID: 11414620, guid: 0c56d4b9340be044cbd00fa16a2ee05a, type: 2}
+    parameters: []
+  fireMessagesInEditMode: 0

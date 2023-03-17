@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Terminus/Demos/Shared/Scenes/Terminus_demo_scenes_switcher.unity
+    guid: 79e20e10124f7624daffba7613951f50
+  - enabled: 1
+    path: Assets/Terminus/Demos/Demo1.Vehicle building/Scenes/demo_1_vehicles.unity
+    guid: e43365356185895418cbe46b8744521a
+  - enabled: 1
+    path: Assets/Terminus/Demos/Demo2.2D spaceships self-assembly/Scenes/demo_2_spaceships.unity
+    guid: 0c44408c70906594f957b869489a2c18
+  - enabled: 1
+    path: Assets/Terminus/Demos/Demo3.FPS vehicle and base building/Scenes/demo_3_FPS.unity
+    guid: f4b6c1e70af17534fb05aa0319244f15

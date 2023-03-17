@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0b0b1b968041b4888d3b47d68c02e7, type: 3}
+  m_Name: SmallFastShip
+  m_EditorClassIdentifier: 
+  objects:
+  - name: Ship
+    id: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    connectors: []
+    symmetricSiblings: 
+    parameters: []
+  - name: EnergyCannon
+    id: 1
+    position: {x: -0.635, y: 0, z: 0.000000008641166}
+    rotation: {x: -0.000000017285911, y: -0.000000017629675, z: -0.7071068, w: -0.7071068}
+    connectors:
+    - name: 0
+      position: {x: -0.45999998, y: 0, z: -8.881784e-16}
+      rotation: {x: 1.7188206e-10, y: -0.7071068, z: 1.7188205e-10, w: -0.70710677}
+      positionDifference: {x: 0, y: 0, z: 0}
+      rotationDifference: {x: 0, y: 0, z: 0, w: 0}
+      angle: 0
+      otherObjectIndex: 0
+      otherConnectorName: left
+      sideway: 0
+    symmetricSiblings: 
+    parameters: []
+  - name: EnergyCannon
+    id: 2
+    position: {x: 0.635, y: 0, z: -0.0000000104308135}
+    rotation: {x: -0.000000021073426, y: 0.000000021073426, z: -0.7071068, w: 0.7071068}
+    connectors:
+    - name: 0
+      position: {x: 0.4599999, y: 0, z: 5.3290705e-15}
+      rotation: {x: 0.70710677, y: 1.7414362e-17, z: -0.7071068, w: 0}
+      positionDifference: {x: 0, y: 0, z: 0}
+      rotationDifference: {x: 0, y: 0, z: 0, w: 0}
+      angle: 0
+      otherObjectIndex: 0
+      otherConnectorName: right
+      sideway: 0
+    symmetricSiblings: 
+    parameters: []
+  - name: Thruster
+    id: 3
+    position: {x: 0.000000020563602, y: -0.9249997, z: -0.000000020563604}
+    rotation: {x: 0.000000029802326, y: -0.000000029802319, z: 0.000000029802322,
+      w: 1}
+    connectors:
+    - name: up
+      position: {x: 0, y: -0.57999945, z: 0}
+      rotation: {x: 0.49999997, y: -0.49999994, z: -0.5, w: -0.49999997}
+      positionDifference: {x: 0, y: 0, z: 0}
+      rotationDifference: {x: 0, y: 0, z: 0, w: 0}
+      angle: 0
+      otherObjectIndex: 0
+      otherConnectorName: down
+      sideway: 0
+    symmetricSiblings: 
+    parameters: []
+  - name: Thruster
+    id: 4
+    position: {x: 0.63, y: -0.9249997, z: -0.000000044703484}
+    rotation: {x: 0.00000004214685, y: 0.000000042146855, z: 0.7071068, w: 0.70710677}
+    connectors:
+    - name: up
+      position: {x: 0.28500003, y: -0.9249997, z: -0.0000000035762717}
+      rotation: {x: 0.7071067, y: 0.000000029802319, z: -0.7071068, w: 0.000000029802322}
+      positionDifference: {x: 0, y: 0, z: 0}
+      rotationDifference: {x: 0, y: 0, z: 0, w: 0}
+      angle: 0
+      otherObjectIndex: 3
+      otherConnectorName: right
+      sideway: 0
+    symmetricSiblings: 
+    parameters: []
+  - name: Thruster
+    id: 5
+    position: {x: -0.63, y: -0.9249997, z: -0.00000007867813}
+    rotation: {x: 0.00000004214685, y: -0.00000004214685, z: -0.70710677, w: 0.7071068}
+    connectors:
+    - name: up
+      position: {x: -0.28499997, y: -0.9249997, z: -0.000000037550926}
+      rotation: {x: 0.00000002980232, y: -0.7071067, z: -0.00000002980232, w: -0.70710677}
+      positionDifference: {x: 0, y: 0, z: 0}
+      rotationDifference: {x: 0, y: 0, z: 0, w: 0}
+      angle: 0
+      otherObjectIndex: 3
+      otherConnectorName: left
+      sideway: 0
+    symmetricSiblings: 
+    parameters: []
